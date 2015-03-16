@@ -3,12 +3,14 @@ package com.cumulus.repo.config;
 import com.cumulus.repo.security.AjaxLogoutSuccessHandler;
 import com.cumulus.repo.security.AuthoritiesConstants;
 import com.cumulus.repo.security.Http401UnauthorizedEntryPoint;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -56,6 +58,7 @@ public class OAuth2ServerConfiguration {
                 .authorizeRequests()
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/register").permitAll()
+                .antMatchers(HttpMethod.PUT,"/api/templates/**").hasAuthority(AuthoritiesConstants.CA)
                 .antMatchers("/api/logs/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
                 .antMatchers("/api/**").authenticated()
                 .antMatchers("/websocket/tracker").hasAuthority(AuthoritiesConstants.ADMIN)
@@ -115,7 +118,7 @@ public class OAuth2ServerConfiguration {
                 .inMemory()
                 .withClient(propertyResolver.getProperty(PROP_CLIENTID))
                 .scopes("read", "write")
-                .authorities(AuthoritiesConstants.ADMIN, AuthoritiesConstants.USER)
+                .authorities(AuthoritiesConstants.ADMIN, AuthoritiesConstants.USER,AuthoritiesConstants.CA)
                 .authorizedGrantTypes("password", "refresh_token")
                 .secret(propertyResolver.getProperty(PROP_SECRET))
                 .accessTokenValiditySeconds(propertyResolver.getProperty(PROP_TOKEN_VALIDITY_SECONDS, Integer.class, 1800));

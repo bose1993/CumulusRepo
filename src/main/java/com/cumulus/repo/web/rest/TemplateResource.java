@@ -40,6 +40,7 @@ public class TemplateResource {
     @Timed
     public ResponseEntity<Void> create(@RequestBody Template template) throws URISyntaxException {
         log.debug("REST request to save Template : {}", template);
+        template.setUser(null);
         if (template.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new template cannot already have an ID").build();
         }

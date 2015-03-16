@@ -36,6 +36,9 @@ public class Template implements Serializable {
 
     @ManyToOne
     private Property property;
+    
+    @ManyToOne
+    private User user;
 
     public Long getId() {
         return id;
@@ -83,6 +86,14 @@ public class Template implements Serializable {
 
     public void setProperty(Property property) {
         this.property = property;
+    }
+    
+    public void setUser(User user){
+    	this.user = user;
+    }
+    
+    public User getUser(){
+    	return this.user;
     }
 
     @Override
