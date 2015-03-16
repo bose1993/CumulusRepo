@@ -1,9 +1,14 @@
 package com.cumulus.repo.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.cumulus.repo.domain.Authority;
 import com.cumulus.repo.domain.Template;
+import com.cumulus.repo.domain.User;
 import com.cumulus.repo.repository.TemplateRepository;
+import com.cumulus.repo.service.UserService;
+import com.cumulus.repo.web.rest.dto.UserDTO;
 import com.cumulus.repo.web.rest.util.PaginationUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -14,9 +19,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import javax.servlet.http.HttpServletResponse;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,6 +39,9 @@ public class TemplateResource {
 
     @Inject
     private TemplateRepository templateRepository;
+    
+    @Inject
+    private UserService userService;
 
     /**
      * POST  /templates -> Create a new template.
@@ -40,7 +52,12 @@ public class TemplateResource {
     @Timed
     public ResponseEntity<Void> create(@RequestBody Template template) throws URISyntaxException {
         log.debug("REST request to save Template : {}", template);
-        template.setUser(null);
+        User user = userService.getUserWithAuthorities();
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }else{
+        	template.setUser(user);
+        }
         if (template.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new template cannot already have an ID").build();
         }
@@ -57,6 +74,12 @@ public class TemplateResource {
     @Timed
     public ResponseEntity<Void> update(@RequestBody Template template) throws URISyntaxException {
         log.debug("REST request to update Template : {}", template);
+        User user = userService.getUserWithAuthorities();
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }else{
+        	template.setUser(user);
+        }
         if (template.getId() == null) {
             return create(template);
         }

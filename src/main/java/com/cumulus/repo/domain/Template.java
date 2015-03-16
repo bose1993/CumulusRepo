@@ -1,4 +1,6 @@
 package com.cumulus.repo.domain;
+import com.cumulus.repo.service.UserService;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
