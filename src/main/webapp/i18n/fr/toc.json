@@ -1,0 +1,20 @@
+{
+    "cumulusApp": {
+        "toc" : {
+            "home": {
+                "title": "Tocs",
+                "createLabel": "Créer un nouveau Toc",
+                "createOrEditLabel": "Créer ou éditer un Toc"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Toc {{ id }} ?"
+            },
+            "detail": {
+                "title": "Toc"
+            },
+            "description": "Description",
+            "template": "template"
+        }
+    }
+}
+

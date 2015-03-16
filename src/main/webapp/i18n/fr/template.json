@@ -1,0 +1,23 @@
+{
+    "cumulusApp": {
+        "template" : {
+            "home": {
+                "title": "Templates",
+                "createLabel": "Créer un nouveau Template",
+                "createOrEditLabel": "Créer ou éditer un Template"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Template {{ id }} ?"
+            },
+            "detail": {
+                "title": "Template"
+            },
+            "XML": "XML",
+            "version": "Version",
+            "master": "Master",
+            "toc": "toc",
+            "property": "property"
+        }
+    }
+}
+

@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="cumulusApp.template.detail.title">Template</span> {{template.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.template.XML">XML</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{template.XML}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.template.version">Version</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{template.version}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.template.master">Master</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{template.master}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.template.toc">toc</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{template.toc.description}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.template.property">property</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{template.property.rules}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="template"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

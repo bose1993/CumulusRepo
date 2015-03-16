@@ -1,0 +1,20 @@
+{
+    "cumulusApp": {
+        "property" : {
+            "home": {
+                "title": "Propertys",
+                "createLabel": "Créer un nouveau Property",
+                "createOrEditLabel": "Créer ou éditer un Property"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Property {{ id }} ?"
+            },
+            "detail": {
+                "title": "Property"
+            },
+            "rules": "Rules",
+            "template_r": "template_r"
+        }
+    }
+}
+

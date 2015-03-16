@@ -1,0 +1,136 @@
+<div>
+
+    <h2 translate="cumulusApp.template.home.title">Template</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveTemplateModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="cumulusApp.template.home.createLabel">Create a new Template</span>
+    </button>
+    <div class="modal fade" id="saveTemplateModal" tabindex="-1" role="dialog" aria-labelledby="myTemplateLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myTemplateLabel" translate="cumulusApp.template.home.createOrEditLabel">Create or edit a Template</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="template.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cumulusApp.template.XML">XML</label>
+                            <input type="text" class="form-control" name="XML"
+                                   ng-model="template.XML">
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.template.version">Version</label>
+                            <input type="text" class="form-control" name="version"
+                                   ng-model="template.version">
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.template.master">Master</label>
+                            <input type="checkbox" class="form-control" name="master"
+                                   ng-model="template.master">
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cumulusApp.template.toc">toc</label>
+                            <select class="form-control" name="toc" ng-model="template.toc.id" ng-options="toc.id as toc.description for toc in tocs">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.template.property">property</label>
+                            <select class="form-control" name="property" ng-model="template.property.id" ng-options="property.id as property.rules for property in propertys">
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteTemplateConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(template.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="cumulusApp.template.delete.question" translate-values="{id: '{{template.id}}'}">Are you sure you want to delete this Template?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="cumulusApp.template.XML">XML</th>
+                    <th translate="cumulusApp.template.version">Version</th>
+                    <th translate="cumulusApp.template.master">Master</th>
+                    <th translate="cumulusApp.template.toc">toc</th>
+                    <th translate="cumulusApp.template.property">property</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="template in templates">
+                    <td><a ui-sref="templateDetail({id:template.id})">{{template.id}}</a></td>
+                    <td>{{template.XML}}</td>
+                    <td>{{template.version}}</td>
+                    <td>{{template.master}}</td>
+                    <td>{{template.toc.description}}</td>
+                    <td>{{template.property.rules}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="templateDetail({id:template.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(template.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(template.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
