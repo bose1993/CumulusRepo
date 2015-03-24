@@ -1,9 +1,9 @@
-com/cumulus/repo/web/rest/TestUtil.class
-com/cumulus/repo/web/rest/AccountResourceTest$1.class
-com/cumulus/repo/web/rest/PropertyResourceTest.class
-com/cumulus/repo/service/UserServiceTest.class
 com/cumulus/repo/web/rest/TocResourceTest.class
-com/cumulus/repo/web/rest/UserResourceTest.class
+com/cumulus/repo/service/UserServiceTest.class
 com/cumulus/repo/web/rest/AccountResourceTest.class
 com/cumulus/repo/web/rest/TemplateResourceTest.class
+com/cumulus/repo/web/rest/UserResourceTest.class
+com/cumulus/repo/web/rest/TestUtil.class
 com/cumulus/repo/security/SecurityUtilsTest.class
+com/cumulus/repo/web/rest/PropertyResourceTest.class
+com/cumulus/repo/web/rest/AccountResourceTest$1.class

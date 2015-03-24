@@ -80,7 +80,7 @@ class TocGatlingTest extends Simulation {
             .exec(http("Create new toc")
             .put("/api/tocs")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "description":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "description":"SAMPLE_TEXT", "name":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_toc_url")))
             .pause(10)

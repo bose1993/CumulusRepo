@@ -1,6 +1,4 @@
 package com.cumulus.repo.domain;
-import com.cumulus.repo.service.UserService;
-
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
@@ -32,6 +30,9 @@ public class Template implements Serializable {
 
     @Column(name = "master")
     private Boolean master;
+
+    @Column(name = "xml_id")
+    private String xmlid;
 
     @ManyToOne
     private Toc toc;
@@ -74,6 +75,14 @@ public class Template implements Serializable {
         this.master = master;
     }
 
+    public String getXmlId() {
+        return xmlid;
+    }
+
+    public void setXmlId(String xmlid) {
+        this.xmlid = xmlid;
+    }
+
     public Toc getToc() {
         return toc;
     }
@@ -90,12 +99,8 @@ public class Template implements Serializable {
         this.property = property;
     }
     
-    public void setUser(User user){
-    	this.user = user;
-    }
-    
-    public User getUser(){
-    	return this.user;
+    public void serUser(User user){
+    	
     }
 
     @Override
@@ -126,6 +131,7 @@ public class Template implements Serializable {
                 ", XML='" + XML + "'" +
                 ", version='" + version + "'" +
                 ", master='" + master + "'" +
+                ", xmlid='" + xmlid + "'" +
                 '}';
     }
 }

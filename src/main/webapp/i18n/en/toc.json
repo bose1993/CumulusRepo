@@ -13,6 +13,7 @@
                 "title": "Toc"
             },
             "description": "Description",
+            "name": "Name",
             "template": "template"
         }
     }

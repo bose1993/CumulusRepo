@@ -80,7 +80,7 @@ class TemplateGatlingTest extends Simulation {
             .exec(http("Create new template")
             .put("/api/templates")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "XML":"SAMPLE_TEXT", "version":null, "master":null}""")).asJSON
+            .body(StringBody("""{"id":null, "XML":"SAMPLE_TEXT", "version":null, "master":null, "xmlid":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_template_url")))
             .pause(10)
