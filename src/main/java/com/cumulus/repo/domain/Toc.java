@@ -24,6 +24,9 @@ public class Toc implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "name")
+    private String name;
+
     @OneToMany(mappedBy = "toc")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -43,6 +46,14 @@ public class Toc implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<Template> getTemplates() {
@@ -79,6 +90,7 @@ public class Toc implements Serializable {
         return "Toc{" +
                 "id=" + id +
                 ", description='" + description + "'" +
+                ", name='" + name + "'" +
                 '}';
     }
 }

@@ -58,6 +58,6 @@ angular.module('cumulusApp')
         };
 
         $scope.clear = function () {
-            $scope.template = {XML: null, version: null, master: null, id: null};
+            $scope.template = {XML: null, version: null, master: null, xmlid: null, id: null};
         };
     });

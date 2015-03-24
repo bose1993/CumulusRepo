@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testBasedCertifcationModel>
+    <CertificationModelTemplateID>str1234</CertificationModelTemplateID>
+    <Collectors>
+        <AbstractCollector Id="???">
+            <TestCategory>Functionality</TestCategory>
+            <Actionability>
+                <Description>str1234</Description>
+                <Mechanism>str1234</Mechanism>
+                <MechanismURI>http://www.xsd2xml.com</MechanismURI>
+            </Actionability>
+            <Capability>
+                <Attacker>str1234</Attacker>
+                <AttackName>str1234</AttackName>
+                <AttackerCapabilities>
+                    <CapabilityId>1234</CapabilityId>
+                    <AttackerCapability>str1234</AttackerCapability>
+                </AttackerCapabilities>
+            </Capability>
+            <TestType>str1234</TestType>
+            <TestDescription>str1234</TestDescription>
+            <TestGenerationModelLink>http://www.xsd2xml.com</TestGenerationModelLink>
+            <TestAttributes>
+                <TestAttribute>
+                    <ID>1234</ID>
+                    <Name>str1234</Name>
+                    <Value />
+                </TestAttribute>
+            </TestAttributes>
+            <TestCases>
+                <TestCase>
+                    <ID>1234</ID>
+                    <Description>str1234</Description>
+                    <TestInstance Operation="str1234">
+                        <Preconditions>str1234</Preconditions>
+                        <HiddenCommunications>str1234</HiddenCommunications>
+                        <Input>str1234</Input>
+                        <ExpectedOutput>str1234</ExpectedOutput>
+                        <PostConditions>str1234</PostConditions>
+                    </TestInstance>
+                </TestCase>
+            </TestCases>
+        </AbstractCollector>
+    </Collectors>
+    <Signature>
+        <Name>str1234</Name>
+        <Role>str1234</Role>
+    </Signature>
+    <ToC>
+        <CloudLayer>SaaS</CloudLayer>
+        <ConcreteToc>str1234</ConcreteToc>
+        <TocDescription>str1234</TocDescription>
+    </ToC>
+    <SecurityProperty SecurityPropertyDefinition="str1234">
+        <sProperty class="http://www.xsd2xml.com">
+            <propertyPerformance>
+                <propertyPerformanceRow>
+                    <propertyPerformanceCell name="str1234">???</propertyPerformanceCell>
+                </propertyPerformanceRow>
+            </propertyPerformance>
+            <propertyParameterList>
+                <propertyParameter name="str1234">???</propertyParameter>
+            </propertyParameterList>
+        </sProperty>
+    </SecurityProperty>
+</testBasedCertifcationModel>

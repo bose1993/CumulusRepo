@@ -57,6 +57,6 @@ angular.module('cumulusApp')
         };
 
         $scope.clear = function () {
-            $scope.toc = {description: null, id: null};
+            $scope.toc = {description: null, name: null, id: null};
         };
     });
