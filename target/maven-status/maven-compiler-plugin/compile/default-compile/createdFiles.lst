@@ -4,6 +4,7 @@ com/cumulus/repo/config/SecurityConfiguration$1.class
 com/cumulus/repo/xml/template/TestAttributeType.class
 com/cumulus/repo/security/SpringSecurityAuditorAware.class
 com/cumulus/repo/xml/template/AbstracCollectorType.class
+com/cumulus/repo/web/exceptions/PropertyNotFoundExcpetion.class
 com/cumulus/repo/config/metrics/DatabaseHealthIndicator$1.class
 com/cumulus/repo/repository/PropertyRepository.class
 com/cumulus/repo/web/rest/AuditResource.class
@@ -74,6 +75,7 @@ com/cumulus/repo/repository/TemplateRepository.class
 com/cumulus/repo/xml/template/TestCaseType.class
 com/cumulus/repo/config/JacksonConfiguration.class
 com/cumulus/repo/async/ExceptionHandlingAsyncTaskExecutor$2.class
+com/cumulus/repo/web/rest/PropertyResource.class
 com/cumulus/repo/xml/template/PropertyType.class
 com/cumulus/repo/repository/UserRepository.class
 com/cumulus/repo/web/propertyeditors/LocaleDateTimeEditor.class
@@ -111,6 +113,7 @@ com/cumulus/repo/config/OAuth2ServerConfiguration.class
 com/cumulus/repo/xml/template/CapabilityType$AttackerCapabilities.class
 com/cumulus/repo/domain/util/ISO8601LocalDateDeserializer.class
 com/cumulus/repo/Application.class
+com/cumulus/repo/web/rest/TemplateService.class
 com/cumulus/repo/repository/PersistenceAuditEventRepository.class
 com/cumulus/repo/domain/PersistentAuditEvent.class
 com/cumulus/repo/config/CloudDatabaseConfiguration.class
