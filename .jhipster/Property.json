@@ -8,7 +8,17 @@
             "otherEntityName": "template",
             "relationshipType": "one-to-many",
             "otherEntityNameCapitalized": "Template"
+        },
+ 	{
+            "relationshipId": 2,
+            "relationshipName": "attribute",
+            "relationshipNameCapitalized": "Attribute",
+            "relationshipFieldName": "attribute_r",
+            "otherEntityName": "propertyattribute",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "PropertyAttribute"
         }
+	
     ],
     "fields": [
         {

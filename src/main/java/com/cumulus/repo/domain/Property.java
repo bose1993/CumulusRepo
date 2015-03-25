@@ -29,6 +29,11 @@ public class Property implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Template> template_rs = new HashSet<>();
 
+    @OneToMany(mappedBy = "property")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<PropertyAttribute> attribute_rs = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -51,6 +56,14 @@ public class Property implements Serializable {
 
     public void setTemplate_rs(Set<Template> templates) {
         this.template_rs = templates;
+    }
+
+    public Set<PropertyAttribute> getAttributes() {
+        return attribute_rs;
+    }
+
+    public void setAttributes(Set<PropertyAttribute> propertyattributes) {
+        this.attribute_rs = propertyattributes;
     }
 
     @Override

@@ -9,6 +9,7 @@
                 "toc": "Toc",
                 "template": "Template",
                 "property": "Property",
+                "propertyAttribute": "PropertyAttribute",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

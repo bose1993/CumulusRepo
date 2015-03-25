@@ -1,13 +1,12 @@
 package com.cumulus.repo.repository;
 
-import com.cumulus.repo.domain.Property;
-import org.springframework.data.jpa.repository.*;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import com.cumulus.repo.domain.Property;
 
 /**
  * Spring Data JPA repository for the Property entity.
  */
-public interface PropertyRepository extends JpaRepository<Property,Long> {
-
+public interface PropertyRepository extends JpaRepository<Property, Long> {
+	Property findOneByRules(String rules);
 }

@@ -8,5 +8,6 @@
     <include file="classpath:config/liquibase/changelog/20150309163126_added_entity_Toc.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150309163303_added_entity_Template.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150310145305_added_entity_Property.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150325113842_added_entity_PropertyAttribute.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

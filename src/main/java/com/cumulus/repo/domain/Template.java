@@ -1,14 +1,18 @@
 package com.cumulus.repo.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * A Template.
@@ -42,6 +46,8 @@ public class Template implements Serializable {
     
     @ManyToOne
     private User user;
+
+
 
     public Long getId() {
         return id;
@@ -99,9 +105,14 @@ public class Template implements Serializable {
         this.property = property;
     }
     
-    public void serUser(User user){
-    	
+    public void setUser(User user){
+    	this.user = user;
     }
+    
+    public User getUser(){
+    	return this.user;
+    }
+
 
     @Override
     public boolean equals(Object o) {

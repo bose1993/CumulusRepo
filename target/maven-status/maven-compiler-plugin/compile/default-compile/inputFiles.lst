@@ -57,6 +57,7 @@
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/xml/template/ObjectFactory.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/service/UserService.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/xml/template/PropertyType.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/repository/PropertyAttributeRepository.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/domain/Property.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/domain/package-info.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/rest/dto/package-info.java
@@ -70,6 +71,7 @@
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/filter/gzip/GzipResponseHeadersNotModifiableException.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/config/WebsocketConfiguration.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/async/ExceptionHandlingAsyncTaskExecutor.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/rest/PropertyAttributeResource.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/service/AuditEventService.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/filter/gzip/GZipServletResponseWrapper.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/security/AuthoritiesConstants.java
@@ -86,12 +88,14 @@
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/domain/util/CustomLocalDateSerializer.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/rest/util/PaginationUtil.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/config/CacheConfiguration.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/rest/TemplateService.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/rest/package-info.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/repository/TocRepository.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/websocket/ActivityService.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/domain/AbstractAuditingEntity.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/domain/Authority.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/rest/dto/LoggerDTO.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/exceptions/PropertyNotFoundExcpetion.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/websocket/dto/ActivityDTO.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/propertyeditors/LocaleDateTimeEditor.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/config/metrics/DatabaseHealthIndicator.java
@@ -105,5 +109,6 @@
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/security/SecurityUtils.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/service/MailService.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/security/package-info.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/domain/PropertyAttribute.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/xml/template/SecurityPropertyType.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/filter/package-info.java

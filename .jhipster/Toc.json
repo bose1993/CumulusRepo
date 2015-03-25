@@ -17,7 +17,15 @@
             "fieldType": "String",
             "fieldNameCapitalized": "Description",
             "fieldNameUnderscored": "description"
-        }
+        },
+	{
+            "fieldId": 2,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name"
+
+	}
     ],
     "fieldsContainOwnerManyToMany": false,
     "fieldsContainOneToMany": true,

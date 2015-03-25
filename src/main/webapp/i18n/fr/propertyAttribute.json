@@ -1,0 +1,22 @@
+{
+    "cumulusApp": {
+        "propertyAttribute" : {
+            "home": {
+                "title": "PropertyAttributes",
+                "createLabel": "Créer un nouveau PropertyAttribute",
+                "createOrEditLabel": "Créer ou éditer un PropertyAttribute"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le PropertyAttribute {{ id }} ?"
+            },
+            "detail": {
+                "title": "PropertyAttribute"
+            },
+            "name": "Name",
+            "type": "Type",
+            "required": "Required",
+            "Property": "Property"
+        }
+    }
+}
+

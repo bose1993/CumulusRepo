@@ -19,13 +19,13 @@ public class JaxbUnmarshal {
     String XML;
     String context;
     JAXBContext jaxbContext;
-    InputStream InpStr;
+    InputStream InpStr; 
     /*
     public static void main(String[] args)  throws FileNotFoundException, IOException, JAXBException{
     	 String xml="";
     	try(BufferedReader br = new BufferedReader(new FileReader("/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/instance1.xml"))) {
             StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
+            String line = br.readLine(); 
 
             while (line != null) {
                 sb.append(line);

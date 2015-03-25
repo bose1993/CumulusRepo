@@ -42,7 +42,16 @@
             "fieldType": "Boolean",
             "fieldNameCapitalized": "Master",
             "fieldNameUnderscored": "master"
-        }
+        },
+	{
+            "fieldId": 4,
+            "fieldName": "xmlid",
+            "fieldType": "String",
+            "fieldNameCapitalized": "XmlId",
+            "fieldNameUnderscored": "xml_id"
+
+
+	}
     ],
     "fieldsContainOwnerManyToMany": false,
     "fieldsContainOneToMany": false,

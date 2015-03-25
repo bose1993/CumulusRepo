@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "property",
+            "relationshipNameCapitalized": "Property",
+            "relationshipFieldName": "property",
+            "otherEntityName": "property",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Property",
+	    "otherEntityField": "rules"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Type",
+            "fieldNameUnderscored": "type"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "required",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "Required",
+            "fieldNameUnderscored": "required"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150325113842",
+    "pagination": "infinite-scroll"
+}

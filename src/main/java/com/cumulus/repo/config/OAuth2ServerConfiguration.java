@@ -1,8 +1,7 @@
 package com.cumulus.repo.config;
 
-import com.cumulus.repo.security.AjaxLogoutSuccessHandler;
-import com.cumulus.repo.security.AuthoritiesConstants;
-import com.cumulus.repo.security.Http401UnauthorizedEntryPoint;
+import javax.inject.Inject;
+import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
@@ -13,7 +12,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -24,109 +22,130 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import javax.inject.Inject;
-import javax.sql.DataSource;
+import com.cumulus.repo.security.AjaxLogoutSuccessHandler;
+import com.cumulus.repo.security.AuthoritiesConstants;
+import com.cumulus.repo.security.Http401UnauthorizedEntryPoint;
 
 @Configuration
 public class OAuth2ServerConfiguration {
 
-    @Configuration
-    @EnableResourceServer
-    protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
+	@Configuration
+	@EnableResourceServer
+	protected static class ResourceServerConfiguration extends
+			ResourceServerConfigurerAdapter {
 
-        @Inject
-        private Http401UnauthorizedEntryPoint authenticationEntryPoint;
+		@Inject
+		private Http401UnauthorizedEntryPoint authenticationEntryPoint;
 
-        @Inject
-        private AjaxLogoutSuccessHandler ajaxLogoutSuccessHandler;
+		@Inject
+		private AjaxLogoutSuccessHandler ajaxLogoutSuccessHandler;
 
-        @Override
-        public void configure(HttpSecurity http) throws Exception {
-            http
-                .exceptionHandling()
-                .authenticationEntryPoint(authenticationEntryPoint)
-            .and()
-                .logout()
-                .logoutUrl("/api/logout")
-                .logoutSuccessHandler(ajaxLogoutSuccessHandler)
-            .and()
-                .csrf()
-                .requireCsrfProtectionMatcher(new AntPathRequestMatcher("/oauth/authorize"))
-                .disable()
-                .headers()
-                .frameOptions().disable()
-                .authorizeRequests()
-                .antMatchers("/api/authenticate").permitAll()
-                .antMatchers("/api/register").permitAll()
-                .antMatchers(HttpMethod.PUT,"/api/templates/**").hasAuthority(AuthoritiesConstants.CA)
-                .antMatchers("/api/logs/**").hasAnyAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/api/**").authenticated()
-                .antMatchers("/websocket/tracker").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/websocket/**").permitAll()
-                .antMatchers("/metrics/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/health/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/trace/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/dump/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/shutdown/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/beans/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/configprops/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/info/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/autoconfig/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/env/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/trace/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/api-docs/**").hasAuthority(AuthoritiesConstants.ADMIN)
-                .antMatchers("/protected/**").authenticated();
+		@Override
+		public void configure(HttpSecurity http) throws Exception {
+			http.exceptionHandling()
+					.authenticationEntryPoint(authenticationEntryPoint)
+					.and()
+					.logout()
+					.logoutUrl("/api/logout")
+					.logoutSuccessHandler(ajaxLogoutSuccessHandler)
+					.and()
+					.csrf()
+					.requireCsrfProtectionMatcher(
+							new AntPathRequestMatcher("/oauth/authorize"))
+					.disable().headers().frameOptions().disable()
+					.authorizeRequests().antMatchers("/api/authenticate")
+					.permitAll().antMatchers("/api/register").permitAll()
+					.antMatchers(HttpMethod.PUT, "/api/templates/**")
+					.hasAuthority(AuthoritiesConstants.CA)
+					.antMatchers(HttpMethod.POST, "/service/templates/**")
+					.hasAuthority(AuthoritiesConstants.CA)
+					.antMatchers("/api/logs/**")
+					.hasAnyAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/api/**").authenticated()
+					.antMatchers("/websocket/tracker")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/websocket/**").permitAll()
+					.antMatchers("/metrics/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/health/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/trace/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/dump/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/shutdown/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/beans/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/configprops/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/info/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/autoconfig/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/env/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/trace/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/api-docs/**")
+					.hasAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers("/protected/**").authenticated();
 
-        }
-    }
+		}
+	}
 
-    @Configuration
-    @EnableAuthorizationServer
-    protected static class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter implements EnvironmentAware {
+	@Configuration
+	@EnableAuthorizationServer
+	protected static class AuthorizationServerConfiguration extends
+			AuthorizationServerConfigurerAdapter implements EnvironmentAware {
 
-        private static final String ENV_OAUTH = "authentication.oauth.";
-        private static final String PROP_CLIENTID = "clientid";
-        private static final String PROP_SECRET = "secret";
-        private static final String PROP_TOKEN_VALIDITY_SECONDS = "tokenValidityInSeconds";
+		private static final String ENV_OAUTH = "authentication.oauth.";
+		private static final String PROP_CLIENTID = "clientid";
+		private static final String PROP_SECRET = "secret";
+		private static final String PROP_TOKEN_VALIDITY_SECONDS = "tokenValidityInSeconds";
 
-        private RelaxedPropertyResolver propertyResolver;
+		private RelaxedPropertyResolver propertyResolver;
 
-        @Inject
-        private DataSource dataSource;
+		@Inject
+		private DataSource dataSource;
 
-        @Bean
-        public TokenStore tokenStore() {
-            return new JdbcTokenStore(dataSource);
-        }
+		@Bean
+		public TokenStore tokenStore() {
+			return new JdbcTokenStore(dataSource);
+		}
 
-        @Inject
-        @Qualifier("authenticationManagerBean")
-        private AuthenticationManager authenticationManager;
+		@Inject
+		@Qualifier("authenticationManagerBean")
+		private AuthenticationManager authenticationManager;
 
-        @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints)
-                throws Exception {
+		@Override
+		public void configure(AuthorizationServerEndpointsConfigurer endpoints)
+				throws Exception {
 
-            endpoints
-                    .tokenStore(tokenStore())
-                    .authenticationManager(authenticationManager);
-        }
+			endpoints.tokenStore(tokenStore()).authenticationManager(
+					authenticationManager);
+		}
 
-        @Override
-        public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            clients
-                .inMemory()
-                .withClient(propertyResolver.getProperty(PROP_CLIENTID))
-                .scopes("read", "write")
-                .authorities(AuthoritiesConstants.ADMIN, AuthoritiesConstants.USER,AuthoritiesConstants.CA)
-                .authorizedGrantTypes("password", "refresh_token")
-                .secret(propertyResolver.getProperty(PROP_SECRET))
-                .accessTokenValiditySeconds(propertyResolver.getProperty(PROP_TOKEN_VALIDITY_SECONDS, Integer.class, 1800));
-        }
+		@Override
+		public void configure(ClientDetailsServiceConfigurer clients)
+				throws Exception {
+			clients.inMemory()
+					.withClient(propertyResolver.getProperty(PROP_CLIENTID))
+					.scopes("read", "write")
+					.authorities(AuthoritiesConstants.ADMIN,
+							AuthoritiesConstants.USER, AuthoritiesConstants.CA)
+					.authorizedGrantTypes("password", "refresh_token")
+					.secret(propertyResolver.getProperty(PROP_SECRET))
+					.accessTokenValiditySeconds(
+							propertyResolver.getProperty(
+									PROP_TOKEN_VALIDITY_SECONDS, Integer.class,
+									1800));
+		}
 
-        @Override
-        public void setEnvironment(Environment environment) {
-            this.propertyResolver = new RelaxedPropertyResolver(environment, ENV_OAUTH);
-        }
-    }
+		@Override
+		public void setEnvironment(Environment environment) {
+			this.propertyResolver = new RelaxedPropertyResolver(environment,
+					ENV_OAUTH);
+		}
+	}
 }
