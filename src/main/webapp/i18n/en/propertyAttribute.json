@@ -15,7 +15,7 @@
             "name": "Name",
             "type": "Type",
             "required": "Required",
-            "Property": "Property"
+            "property": "property"
         }
     }
 }
