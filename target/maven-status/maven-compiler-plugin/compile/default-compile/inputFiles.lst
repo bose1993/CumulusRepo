@@ -35,6 +35,7 @@
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/config/apidoc/package-info.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/config/metrics/package-info.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/config/DatabaseConfiguration.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/web/exceptions/PropertyAttributeException.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/xml/template/TestCaseType.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/security/Http401UnauthorizedEntryPoint.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/main/java/com/cumulus/repo/xml/template/CollectorType.java

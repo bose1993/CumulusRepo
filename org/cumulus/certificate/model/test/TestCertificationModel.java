@@ -2,16 +2,19 @@
 // Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
-// Generato il: 2015.03.19 alle 02:09:45 PM CET 
+// Generato il: 2015.04.07 alle 04:45:53 PM CEST 
 //
 
 
 package org.cumulus.certificate.model.test;
 
+import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 
 /**
@@ -24,7 +27,15 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="CertificationModelTemplateID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="CertificationModelTemplateID">
+ *           &lt;complexType>
+ *             &lt;simpleContent>
+ *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+ *                 &lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}decimal" />
+ *               &lt;/extension>
+ *             &lt;/simpleContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *         &lt;element name="Collectors" type="{http://www.cumulus.org/certificate/model/test}CollectorType"/>
  *         &lt;element name="Signature" type="{http://www.cumulus.org/certificate/model/test}signatureType"/>
  *         &lt;element name="ToC" type="{http://www.cumulus.org/certificate/model/test}tocType"/>
@@ -48,7 +59,7 @@ import javax.xml.bind.annotation.XmlType;
 public class TestCertificationModel {
 
     @XmlElement(name = "CertificationModelTemplateID", required = true)
-    protected String certificationModelTemplateID;
+    protected TestCertificationModel.CertificationModelTemplateID certificationModelTemplateID;
     @XmlElement(name = "Collectors", required = true)
     protected CollectorType collectors;
     @XmlElement(name = "Signature", required = true)
@@ -63,10 +74,10 @@ public class TestCertificationModel {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link TestCertificationModel.CertificationModelTemplateID }
      *     
      */
-    public String getCertificationModelTemplateID() {
+    public TestCertificationModel.CertificationModelTemplateID getCertificationModelTemplateID() {
         return certificationModelTemplateID;
     }
 
@@ -75,10 +86,10 @@ public class TestCertificationModel {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link TestCertificationModel.CertificationModelTemplateID }
      *     
      */
-    public void setCertificationModelTemplateID(String value) {
+    public void setCertificationModelTemplateID(TestCertificationModel.CertificationModelTemplateID value) {
         this.certificationModelTemplateID = value;
     }
 
@@ -176,6 +187,85 @@ public class TestCertificationModel {
      */
     public void setSecurityProperty(SecurityPropertyType value) {
         this.securityProperty = value;
+    }
+
+
+    /**
+     * <p>Classe Java per anonymous complex type.
+     * 
+     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;simpleContent>
+     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+     *       &lt;attribute name="version" type="{http://www.w3.org/2001/XMLSchema}decimal" />
+     *     &lt;/extension>
+     *   &lt;/simpleContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "value"
+    })
+    public static class CertificationModelTemplateID {
+
+        @XmlValue
+        protected String value;
+        @XmlAttribute(name = "version")
+        protected BigDecimal version;
+
+        /**
+         * Recupera il valore della proprietà value.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getValue() {
+            return value;
+        }
+
+        /**
+         * Imposta il valore della proprietà value.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        /**
+         * Recupera il valore della proprietà version.
+         * 
+         * @return
+         *     possible object is
+         *     {@link BigDecimal }
+         *     
+         */
+        public BigDecimal getVersion() {
+            return version;
+        }
+
+        /**
+         * Imposta il valore della proprietà version.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link BigDecimal }
+         *     
+         */
+        public void setVersion(BigDecimal value) {
+            this.version = value;
+        }
+
     }
 
 }

@@ -2,6 +2,7 @@ package com.cumulus.repo.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,127 +23,128 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Template implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @Column(name = "xml")
-    private String XML;
+	@Column(name = "xml")
+	private String XML;
 
-    @Column(name = "version", precision=10, scale=2)
-    private BigDecimal version;
+	@Column(name = "version", precision = 10, scale = 2)
+	private BigDecimal version;
 
-    @Column(name = "master")
-    private Boolean master;
+	@Column(name = "master")
+	private Boolean master;
 
-    @Column(name = "xml_id")
-    private String xmlid;
+	@Column(name = "xml_id")
+	private String xmlid;
 
-    @ManyToOne
-    private Toc toc;
+	@Column(name = "creation_timestamp", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+	private Date creation_timestammp;
 
-    @ManyToOne
-    private Property property;
-    
-    @ManyToOne
-    private User user;
+	@ManyToOne
+	private Toc toc;
 
+	@ManyToOne
+	private Property property;
 
+	@ManyToOne
+	private User user;
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getXML() {
-        return XML;
-    }
+	public String getXML() {
+		return XML;
+	}
 
-    public void setXML(String XML) {
-        this.XML = XML;
-    }
+	public void setXML(String XML) {
+		this.XML = XML;
+	}
 
-    public BigDecimal getVersion() {
-        return version;
-    }
+	public BigDecimal getVersion() {
+		return version;
+	}
 
-    public void setVersion(BigDecimal version) {
-        this.version = version;
-    }
+	public void setVersion(BigDecimal version) {
+		this.version = version;
+	}
 
-    public Boolean getMaster() {
-        return master;
-    }
+	public Boolean getMaster() {
+		return master;
+	}
 
-    public void setMaster(Boolean master) {
-        this.master = master;
-    }
+	public void setMaster(Boolean master) {
+		this.master = master;
+	}
 
-    public String getXmlId() {
-        return xmlid;
-    }
+	public String getXmlId() {
+		return xmlid;
+	}
 
-    public void setXmlId(String xmlid) {
-        this.xmlid = xmlid;
-    }
+	public void setXmlId(String xmlid) {
+		this.xmlid = xmlid;
+	}
 
-    public Toc getToc() {
-        return toc;
-    }
+	public Toc getToc() {
+		return toc;
+	}
 
-    public void setToc(Toc toc) {
-        this.toc = toc;
-    }
+	public void setToc(Toc toc) {
+		this.toc = toc;
+	}
 
-    public Property getProperty() {
-        return property;
-    }
+	public Property getProperty() {
+		return property;
+	}
 
-    public void setProperty(Property property) {
-        this.property = property;
-    }
-    
-    public void setUser(User user){
-    	this.user = user;
-    }
-    
-    public User getUser(){
-    	return this.user;
-    }
+	public void setProperty(Property property) {
+		this.property = property;
+	}
 
+	public void setUser(User user) {
+		this.user = user;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public User getUser() {
+		return this.user;
+	}
 
-        Template template = (Template) o;
+	public Date getCreationeTimestamp() {
+		return this.creation_timestammp;
+	}
 
-        if (id != null ? !id.equals(template.id) : template.id != null) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 
-        return true;
-    }
+		Template template = (Template) o;
 
-    @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
-    }
+		if (id != null ? !id.equals(template.id) : template.id != null)
+			return false;
 
-    @Override
-    public String toString() {
-        return "Template{" +
-                "id=" + id +
-                ", XML='" + XML + "'" +
-                ", version='" + version + "'" +
-                ", master='" + master + "'" +
-                ", xmlid='" + xmlid + "'" +
-                '}';
-    }
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return (int) (id ^ (id >>> 32));
+	}
+
+	@Override
+	public String toString() {
+		return "Template{" + "id=" + id + ", XML='" + XML + "'" + ", version='"
+				+ version + "'" + ", master='" + master + "'" + ", xmlid='"
+				+ xmlid + "'" + '}';
+	}
 }

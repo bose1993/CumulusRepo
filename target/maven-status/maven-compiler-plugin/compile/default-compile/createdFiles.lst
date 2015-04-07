@@ -116,5 +116,6 @@ com/cumulus/repo/Application.class
 com/cumulus/repo/web/rest/TemplateService.class
 com/cumulus/repo/repository/PersistenceAuditEventRepository.class
 com/cumulus/repo/domain/PersistentAuditEvent.class
+com/cumulus/repo/web/exceptions/PropertyAttributeException.class
 com/cumulus/repo/config/CloudDatabaseConfiguration.class
 com/cumulus/repo/security/AjaxAuthenticationFailureHandler.class

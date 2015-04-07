@@ -1,0 +1,712 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cumulus 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.1.RELEASE:run (default-cli) @ cumulus >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-versions) @ cumulus ---
+[INFO] 
+[INFO] --- yeoman-maven-plugin:0.4:build (run-grunt) @ cumulus ---
+[INFO] node version :
+v0.10.25
+[INFO] npm version :
+2.6.1
+[INFO] --------------------------------------
+[INFO]          NPM INSTALL
+[INFO] --------------------------------------
+
+> yo@1.4.6 postinstall /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/node_modules/yo
+> yodoctor
+
+
+Yeoman Doctor
+Running sanity checks on your system
+
+✔ No .bowerrc file in home directory
+✔ Global configuration file is valid
+✔ NODE_PATH matches the npm root
+✔ No .yo-rc.json file in home directory
+
+Everything looks all right!
+[INFO] bower version :
+1.3.12
+[INFO] --------------------------------------
+[INFO]          BOWER INSTALL --NO-COLOR
+[INFO] --------------------------------------
+[INFO] grunt version :
+grunt-cli v0.1.13
+grunt v0.4.5
+[INFO] --------------------------------------
+[INFO]          GRUNT COMPASS:SERVER --FORCE
+[INFO] --------------------------------------
+[4mRunning "compass:server" (compass) task[24m
+
+[32mDone, without errors.[39m
+
+
+Execution Time (2015-03-26 10:35:02 UTC)
+loading tasks   34ms  ▇ 2%
+compass:server  1.9s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 98%
+Total 1.9s
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ cumulus ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 13 resources
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ cumulus ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ cumulus ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ cumulus ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.1.RELEASE:run (default-cli) @ cumulus <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.1.RELEASE:run (default-cli) @ cumulus ---
+[INFO] Attaching agents: []
+Listening for transport dt_socket at address: 5005
+[INFO] com.cumulus.repo.Application - Starting Application on lenovo with PID 4262 (/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/target/classes started by ebosetti in /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus)
+[DEBUG] com.cumulus.repo.Application - Running with Spring Boot v1.2.1.RELEASE, Spring v4.1.4.RELEASE
+[INFO] com.hazelcast.config.XmlConfigLocator - Loading 'hazelcast-default.xml' from classpath.
+[INFO] com.hazelcast.instance.DefaultAddressPicker - [LOCAL] [dev] [3.4] Prefer IPv4 stack is true.
+[INFO] com.hazelcast.instance.DefaultAddressPicker - [LOCAL] [dev] [3.4] Picked Address[172.25.27.14]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+[INFO] com.hazelcast.spi.OperationService - [172.25.27.14]:5701 [dev] [3.4] Backpressure is disabled
+[INFO] com.hazelcast.spi.impl.BasicOperationScheduler - [172.25.27.14]:5701 [dev] [3.4] Starting with 2 generic operation threads and 4 partition operation threads.
+[INFO] com.hazelcast.system - [172.25.27.14]:5701 [dev] [3.4] Hazelcast 3.4 (20141224 - 3dc5214) starting at Address[172.25.27.14]:5701
+[INFO] com.hazelcast.system - [172.25.27.14]:5701 [dev] [3.4] Copyright (C) 2008-2014 Hazelcast.com
+[INFO] com.hazelcast.instance.Node - [172.25.27.14]:5701 [dev] [3.4] Creating MulticastJoiner
+[INFO] com.hazelcast.core.LifecycleService - [172.25.27.14]:5701 [dev] [3.4] Address[172.25.27.14]:5701 is STARTING
+[DEBUG] sun.net.www.protocol.http.HttpURLConnection - sun.net.www.MessageHeader@4335fdd5 pairs: {GET /version.jsp?version=3.4&m=cf3e99cf-9869-4bcd-abd0-35010318070e&e=false&l=NULL&p=maven&c=e77989ed21758e78331b20e477fc5582&crsz=A&cssz=A HTTP/1.1: null}{User-Agent: Mozilla/5.0}{Host: versioncheck.hazelcast.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}
+[DEBUG] sun.net.www.protocol.http.HttpURLConnection - sun.net.www.MessageHeader@751806bb8 pairs: {null: HTTP/1.1 200 OK}{Date: Thu, 26 Mar 2015 10:35:54 GMT}{Server: Apache-Coyote/1.1}{Content-Type: text/xml;charset=UTF-8}{Vary: Accept-Encoding}{Keep-Alive: timeout=5, max=100}{Connection: Keep-Alive}{Transfer-Encoding: chunked}
+[INFO] com.hazelcast.cluster.impl.MulticastJoiner - [172.25.27.14]:5701 [dev] [3.4] 
+
+
+Members [1] {
+	Member [172.25.27.14]:5701 this
+}
+
+[INFO] com.hazelcast.core.LifecycleService - [172.25.27.14]:5701 [dev] [3.4] Address[172.25.27.14]:5701 is STARTED
+[DEBUG] org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+[DEBUG] com.cumulus.repo.config.AsyncConfiguration - Creating Async Task Executor
+[DEBUG] com.cumulus.repo.config.MetricsConfiguration - Registering JVM gauges
+[INFO] com.cumulus.repo.config.MetricsConfiguration - Initializing Metrics JMX reporting
+[DEBUG] com.cumulus.repo.config.DatabaseConfiguration - Configuring Datasource
+[DEBUG] com.cumulus.repo.config.DatabaseConfiguration - Configuring Liquibase
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.Property]; using defaults.
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.Toc]; using defaults.
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.Template]; using defaults.
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.PropertyAttribute]; using defaults.
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.Property.attribute_rs]; using defaults.
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.Toc.templates]; using defaults.
+[WARN] org.hibernate.cache.ehcache.AbstractEhcacheRegionFactory - HHH020003: Could not find a specific ehcache configuration for cache named [com.cumulus.repo.domain.Property.template_rs]; using defaults.
+[DEBUG] com.cumulus.repo.config.MailConfiguration - Configuring mail server
+[INFO] com.cumulus.repo.config.WebConfigurer - Web application configuration, using profiles: [dev]
+[DEBUG] com.cumulus.repo.config.WebConfigurer - Registering Clustered Http Session Filter
+[DEBUG] com.cumulus.repo.config.WebConfigurer - Initializing Metrics registries
+[DEBUG] com.cumulus.repo.config.WebConfigurer - Registering Metrics Filter
+[DEBUG] com.cumulus.repo.config.WebConfigurer - Registering Metrics Servlet
+[INFO] com.cumulus.repo.config.WebConfigurer - Web application fully configured
+[INFO] com.cumulus.repo.Application - Running with Spring profile(s) : [dev]
+[INFO] com.hazelcast.instance.DefaultAddressPicker - [LOCAL] [dev] [3.4] Picked Address[127.0.0.1]:5702, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5702], bind any local is true
+[INFO] com.hazelcast.spi.OperationService - [127.0.0.1]:5702 [dev] [3.4] Backpressure is disabled
+[INFO] com.hazelcast.spi.impl.BasicOperationScheduler - [127.0.0.1]:5702 [dev] [3.4] Starting with 2 generic operation threads and 4 partition operation threads.
+[INFO] com.hazelcast.system - [127.0.0.1]:5702 [dev] [3.4] Hazelcast 3.4 (20141224 - 3dc5214) starting at Address[127.0.0.1]:5702
+[INFO] com.hazelcast.system - [127.0.0.1]:5702 [dev] [3.4] Copyright (C) 2008-2014 Hazelcast.com
+[INFO] com.hazelcast.core.LifecycleService - [127.0.0.1]:5702 [dev] [3.4] Address[127.0.0.1]:5702 is STARTING
+[WARN] com.hazelcast.instance.Node - [127.0.0.1]:5702 [dev] [3.4] No join method is enabled! Starting standalone.
+[WARN] com.hazelcast.instance.Node - [127.0.0.1]:5702 [dev] [3.4] Config seed port is 5701 and cluster size is 1. Some of the ports seem occupied!
+[INFO] com.hazelcast.core.LifecycleService - [127.0.0.1]:5702 [dev] [3.4] Address[127.0.0.1]:5702 is STARTED
+[INFO] com.hazelcast.util.HealthMonitor - [127.0.0.1]:5702 [dev] [3.4] processors=4, physical.memory.total=3,8G, physical.memory.free=157,0M, swap.space.total=7,4G, swap.space.free=7,4G, heap.memory.used=267,0M, heap.memory.free=114,5M, heap.memory.total=381,5M, heap.memory.max=855,5M, heap.memory.used/total=69,99%, heap.memory.used/max=31,21%, minor.gc.count=16, minor.gc.time=160ms, major.gc.count=3, major.gc.time=299ms, load.process=74,00%, load.system=77,00%, load.systemAverage=147,00%, thread.count=62, thread.peakCount=62, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=0, clientEndpoint.count=0, connection.active.count=0, client.connection.count=0, connection.count=0
+[INFO] com.cumulus.repo.config.ThymeleafConfiguration - loading non-reloadable mail messages resources
+[DEBUG] sun.net.www.protocol.http.HttpURLConnection - sun.net.www.MessageHeader@48196fd15 pairs: {GET /version.jsp?version=3.4&m=8fc43a88-94d6-4290-a07a-b74b27f45494&e=false&l=NULL&p=maven&c=e77989ed21758e78331b20e477fc5582&crsz=A&cssz=A HTTP/1.1: null}{User-Agent: Mozilla/5.0}{Host: versioncheck.hazelcast.com}{Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2}{Connection: keep-alive}
+[DEBUG] sun.net.www.protocol.http.HttpURLConnection - sun.net.www.MessageHeader@d1bf8b68 pairs: {null: HTTP/1.1 200 OK}{Date: Thu, 26 Mar 2015 10:36:10 GMT}{Server: Apache-Coyote/1.1}{Content-Type: text/xml;charset=UTF-8}{Vary: Accept-Encoding}{Keep-Alive: timeout=5, max=100}{Connection: Keep-Alive}{Transfer-Encoding: chunked}
+[DEBUG] com.cumulus.repo.aop.logging.LoggingAspect - Enter: com.cumulus.repo.repository.CustomAuditEventRepository.auditEventRepository() with argument[s] = []
+[DEBUG] com.cumulus.repo.aop.logging.LoggingAspect - Exit: com.cumulus.repo.repository.CustomAuditEventRepository.auditEventRepository() with result = com.cumulus.repo.repository.CustomAuditEventRepository$1@77a9ac36
+[DEBUG] com.cumulus.repo.config.apidoc.SwaggerConfiguration - Starting Swagger
+[DEBUG] com.cumulus.repo.config.apidoc.SwaggerConfiguration - Started Swagger in 68 ms
+[DEBUG] com.cumulus.repo.config.CacheConfiguration - Starting Ehcache
+[DEBUG] com.cumulus.repo.config.CacheConfiguration - Registering Ehcache Metrics gauges
+[INFO] com.cumulus.repo.Application - Started Application in 23.255 seconds (JVM running for 25.413)
+[INFO] com.cumulus.repo.Application - Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8080
+	External: 	http://127.0.1.1:8080
+----------------------------------------------------------
+[INFO] com.hazelcast.partition.InternalPartitionService - [172.25.27.14]:5701 [dev] [3.4] Initializing cluster partition table first arrangement...
+[DEBUG] com.cumulus.repo.aop.logging.LoggingAspect - Enter: com.cumulus.repo.web.rest.TemplateService.create() with argument[s] = [<?xml version="1.0" encoding="UTF-8"?>
+<test:testBasedCertifcationModel xmlns:sch="http://www.ascc.net/xml/schematron"
+ xmlns:cm="http://www.cumulus.org/certificate/model"
+ xmlns:test="http://www.cumulus.org/certificate/model/test"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+        <CertificationModelTemplateID>str1234</CertificationModelTemplateID>
+        <Collectors>
+            <AbstractCollector Id="ID123">
+                <TestCategory>Functionality</TestCategory>
+                <Actionability>
+                    <Description>str1234</Description>
+                    <Mechanism>str1234</Mechanism>
+                    <MechanismURI>http://www.xsd2xml.com</MechanismURI>
+                </Actionability>
+                <Capability>
+                    <Attacker>str1234</Attacker>
+                    <AttackName>str1234</AttackName>
+                    <AttackerCapabilities>
+                        <CapabilityId>1234</CapabilityId>
+                        <AttackerCapability>str1234</AttackerCapability>
+                    </AttackerCapabilities>
+                </Capability>
+                <TestType>str1234</TestType>
+                <TestDescription>str1234</TestDescription>
+                <TestGenerationModelLink>http://www.xsd2xml.com</TestGenerationModelLink>
+                <TestAttributes>
+                    <TestAttribute>
+                        <ID>1234</ID>
+                        <Name>str1234</Name>
+                        <Value />
+                    </TestAttribute>
+                </TestAttributes>
+                <TestCases>
+                    <TestCase>
+                        <ID>1234</ID>
+                        <Description>str1234</Description>
+                        <TestInstance Operation="str1234">
+                            <Preconditions>str1234</Preconditions>
+                            <HiddenCommunications>str1234</HiddenCommunications>
+                            <Input>str1234</Input>
+                            <ExpectedOutput>str1234</ExpectedOutput>
+                            <PostConditions>str1234</PostConditions>
+                        </TestInstance>
+                    </TestCase>
+                </TestCases>
+            </AbstractCollector>
+        </Collectors>
+        <Signature>
+            <Name>str1234</Name>
+            <Role>str1234</Role>
+        </Signature>
+        <ToC>
+            <CloudLayer>SaaS</CloudLayer>
+            <ConcreteToc>str1234</ConcreteToc>
+            <TocDescription>str1234</TocDescription>
+        </ToC>
+        <SecurityProperty SecurityPropertyDefinition="str1234">
+            <sProperty class="http://www.xsd2xml.com">
+                <propertyPerformance>
+                    <propertyPerformanceRow>
+                        <propertyPerformanceCell name="str1234">0</propertyPerformanceCell>
+                    </propertyPerformanceRow>
+                </propertyPerformance>
+                <propertyParameterList>
+                    <propertyParameter name="str1234">0</propertyParameter>
+                </propertyParameterList>
+            </sProperty>
+        </SecurityProperty>
+</test:testBasedCertifcationModel>]
+[DEBUG] com.cumulus.repo.web.rest.TemplateResource - REST request to create Template by XML : <?xml version="1.0" encoding="UTF-8"?>
+<test:testBasedCertifcationModel xmlns:sch="http://www.ascc.net/xml/schematron"
+ xmlns:cm="http://www.cumulus.org/certificate/model"
+ xmlns:test="http://www.cumulus.org/certificate/model/test"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+        <CertificationModelTemplateID>str1234</CertificationModelTemplateID>
+        <Collectors>
+            <AbstractCollector Id="ID123">
+                <TestCategory>Functionality</TestCategory>
+                <Actionability>
+                    <Description>str1234</Description>
+                    <Mechanism>str1234</Mechanism>
+                    <MechanismURI>http://www.xsd2xml.com</MechanismURI>
+                </Actionability>
+                <Capability>
+                    <Attacker>str1234</Attacker>
+                    <AttackName>str1234</AttackName>
+                    <AttackerCapabilities>
+                        <CapabilityId>1234</CapabilityId>
+                        <AttackerCapability>str1234</AttackerCapability>
+                    </AttackerCapabilities>
+                </Capability>
+                <TestType>str1234</TestType>
+                <TestDescription>str1234</TestDescription>
+                <TestGenerationModelLink>http://www.xsd2xml.com</TestGenerationModelLink>
+                <TestAttributes>
+                    <TestAttribute>
+                        <ID>1234</ID>
+                        <Name>str1234</Name>
+                        <Value />
+                    </TestAttribute>
+                </TestAttributes>
+                <TestCases>
+                    <TestCase>
+                        <ID>1234</ID>
+                        <Description>str1234</Description>
+                        <TestInstance Operation="str1234">
+                            <Preconditions>str1234</Preconditions>
+                            <HiddenCommunications>str1234</HiddenCommunications>
+                            <Input>str1234</Input>
+                            <ExpectedOutput>str1234</ExpectedOutput>
+                            <PostConditions>str1234</PostConditions>
+                        </TestInstance>
+                    </TestCase>
+                </TestCases>
+            </AbstractCollector>
+        </Collectors>
+        <Signature>
+            <Name>str1234</Name>
+            <Role>str1234</Role>
+        </Signature>
+        <ToC>
+            <CloudLayer>SaaS</CloudLayer>
+            <ConcreteToc>str1234</ConcreteToc>
+            <TocDescription>str1234</TocDescription>
+        </ToC>
+        <SecurityProperty SecurityPropertyDefinition="str1234">
+            <sProperty class="http://www.xsd2xml.com">
+                <propertyPerformance>
+                    <propertyPerformanceRow>
+                        <propertyPerformanceCell name="str1234">0</propertyPerformanceCell>
+                    </propertyPerformanceRow>
+                </propertyPerformance>
+                <propertyParameterList>
+                    <propertyParameter name="str1234">0</propertyParameter>
+                </propertyParameterList>
+            </sProperty>
+        </SecurityProperty>
+</test:testBasedCertifcationModel>
+Hibernate: select toc0_.id as id1_6_, toc0_.description as descript2_6_, toc0_.name as name3_6_ from T_TOC toc0_ where toc0_.name=?
+Hibernate: select property0_.id as id1_3_, property0_.rules as rules2_3_ from T_PROPERTY property0_ where property0_.rules=?
+Hibernate: select propertyat0_.id as id1_4_, propertyat0_.name as name2_4_, propertyat0_.property_id as property5_4_, propertyat0_.required as required3_4_, propertyat0_.type as type4_4_ from T_PROPERTYATTRIBUTE propertyat0_ left outer join T_PROPERTY property1_ on propertyat0_.property_id=property1_.id where property1_.id=? and propertyat0_.name=?
+[DEBUG] com.cumulus.repo.aop.logging.LoggingAspect - Enter: com.cumulus.repo.service.UserService.getUserWithAuthorities() with argument[s] = []
+Hibernate: select user0_.id as id1_7_, user0_.created_by as created_2_7_, user0_.created_date as created_3_7_, user0_.last_modified_by as last_mod4_7_, user0_.last_modified_date as last_mod5_7_, user0_.activated as activate6_7_, user0_.activation_key as activati7_7_, user0_.email as email8_7_, user0_.first_name as first_na9_7_, user0_.lang_key as lang_ke10_7_, user0_.last_name as last_na11_7_, user0_.login as login12_7_, user0_.password as passwor13_7_ from T_USER user0_ where user0_.login is null
+[ERROR] com.cumulus.repo.aop.logging.LoggingAspect - Exception in com.cumulus.repo.service.UserService.getUserWithAuthorities() with cause = null
+java.lang.NullPointerException: null
+	at com.cumulus.repo.service.UserService.getUserWithAuthorities(UserService.java:98) ~[classes/:na]
+	at com.cumulus.repo.service.UserService$$FastClassBySpringCGLIB$$ae8c00e0.invoke(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.aop.logging.LoggingAspect.logAround(LoggingAspect.java:49) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:58) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.service.UserService$$EnhancerBySpringCGLIB$$86948d39.getUserWithAuthorities(<generated>) [spring-core-4.1.4.RELEASE.jar:na]
+	at com.cumulus.repo.web.rest.TemplateService.create(TemplateService.java:146) [classes/:na]
+	at com.cumulus.repo.web.rest.TemplateService$$FastClassBySpringCGLIB$$537c2c0c.invoke(<generated>) [spring-core-4.1.4.RELEASE.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.aop.logging.LoggingAspect.logAround(LoggingAspect.java:49) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:58) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.ryantenney.metrics.spring.TimedMethodInterceptor.invoke(TimedMethodInterceptor.java:48) [metrics-spring-3.0.3.jar:na]
+	at com.ryantenney.metrics.spring.TimedMethodInterceptor.invoke(TimedMethodInterceptor.java:34) [metrics-spring-3.0.3.jar:na]
+	at com.ryantenney.metrics.spring.AbstractMetricMethodInterceptor.invoke(AbstractMetricMethodInterceptor.java:59) [metrics-spring-3.0.3.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.web.rest.TemplateService$$EnhancerBySpringCGLIB$$3b471094.create(<generated>) [spring-core-4.1.4.RELEASE.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at com.codahale.metrics.servlet.AbstractInstrumentedFilter.doFilter(AbstractInstrumentedFilter.java:104) [metrics-servlet-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextHeaderFilter.doFilterInternal(EndpointWebMvcAutoConfiguration.java:291) [spring-boot-actuator-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:140) [spring-security-oauth2-2.0.1.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:100) [spring-boot-actuator-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at com.hazelcast.web.WebFilter.doFilter(WebFilter.java:463) [hazelcast-wm-3.4.jar:3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:537) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1085) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1556) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1513) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+[ERROR] com.cumulus.repo.aop.logging.LoggingAspect - Exception in com.cumulus.repo.web.rest.TemplateService.create() with cause = null
+java.lang.NullPointerException: null
+	at com.cumulus.repo.service.UserService.getUserWithAuthorities(UserService.java:98) ~[classes/:na]
+	at com.cumulus.repo.service.UserService$$FastClassBySpringCGLIB$$ae8c00e0.invoke(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.aop.logging.LoggingAspect.logAround(LoggingAspect.java:49) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:58) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.service.UserService$$EnhancerBySpringCGLIB$$86948d39.getUserWithAuthorities(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at com.cumulus.repo.web.rest.TemplateService.create(TemplateService.java:146) ~[classes/:na]
+	at com.cumulus.repo.web.rest.TemplateService$$FastClassBySpringCGLIB$$537c2c0c.invoke(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.aop.logging.LoggingAspect.logAround(LoggingAspect.java:49) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:58) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.ryantenney.metrics.spring.TimedMethodInterceptor.invoke(TimedMethodInterceptor.java:48) [metrics-spring-3.0.3.jar:na]
+	at com.ryantenney.metrics.spring.TimedMethodInterceptor.invoke(TimedMethodInterceptor.java:34) [metrics-spring-3.0.3.jar:na]
+	at com.ryantenney.metrics.spring.AbstractMetricMethodInterceptor.invoke(AbstractMetricMethodInterceptor.java:59) [metrics-spring-3.0.3.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653) [spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.web.rest.TemplateService$$EnhancerBySpringCGLIB$$3b471094.create(<generated>) [spring-core-4.1.4.RELEASE.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842) [spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at com.codahale.metrics.servlet.AbstractInstrumentedFilter.doFilter(AbstractInstrumentedFilter.java:104) [metrics-servlet-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextHeaderFilter.doFilterInternal(EndpointWebMvcAutoConfiguration.java:291) [spring-boot-actuator-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:140) [spring-security-oauth2-2.0.1.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160) [spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:100) [spring-boot-actuator-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at com.hazelcast.web.WebFilter.doFilter(WebFilter.java:463) [hazelcast-wm-3.4.jar:3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:537) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1085) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1556) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1513) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+[ERROR] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.cumulus.repo.service.UserService.getUserWithAuthorities(UserService.java:98) ~[classes/:na]
+	at com.cumulus.repo.service.UserService$$FastClassBySpringCGLIB$$ae8c00e0.invoke(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.aop.logging.LoggingAspect.logAround(LoggingAspect.java:49) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:58) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.service.UserService$$EnhancerBySpringCGLIB$$86948d39.getUserWithAuthorities(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at com.cumulus.repo.web.rest.TemplateService.create(TemplateService.java:146) ~[classes/:na]
+	at com.cumulus.repo.web.rest.TemplateService$$FastClassBySpringCGLIB$$537c2c0c.invoke(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.aop.logging.LoggingAspect.logAround(LoggingAspect.java:49) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:58) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.ryantenney.metrics.spring.TimedMethodInterceptor.invoke(TimedMethodInterceptor.java:48) ~[metrics-spring-3.0.3.jar:na]
+	at com.ryantenney.metrics.spring.TimedMethodInterceptor.invoke(TimedMethodInterceptor.java:34) ~[metrics-spring-3.0.3.jar:na]
+	at com.ryantenney.metrics.spring.AbstractMetricMethodInterceptor.invoke(AbstractMetricMethodInterceptor.java:59) ~[metrics-spring-3.0.3.jar:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653) ~[spring-aop-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at com.cumulus.repo.web.rest.TemplateService$$EnhancerBySpringCGLIB$$3b471094.create(<generated>) ~[spring-core-4.1.4.RELEASE.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_40]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_40]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_40]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_40]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:777) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:706) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:943) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:877) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:644) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842) ~[spring-webmvc-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:725) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at com.codahale.metrics.servlet.AbstractInstrumentedFilter.doFilter(AbstractInstrumentedFilter.java:104) ~[metrics-servlet-3.1.0.jar:3.1.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration$ApplicationContextHeaderFilter.doFilterInternal(EndpointWebMvcAutoConfiguration.java:291) ~[spring-boot-actuator-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:140) ~[spring-security-oauth2-2.0.1.RELEASE.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160) ~[spring-security-web-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:100) ~[spring-boot-actuator-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at com.hazelcast.web.WebFilter.doFilter(WebFilter.java:463) ~[hazelcast-wm-3.4.jar:3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219) ~[tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:537) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1085) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1556) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1513) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_40]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.15.jar:8.0.15]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_40]
+[INFO] com.hazelcast.core.LifecycleService - [172.25.27.14]:5701 [dev] [3.4] Address[172.25.27.14]:5701 is SHUTTING_DOWN
+[WARN] com.hazelcast.instance.Node - [172.25.27.14]:5701 [dev] [3.4] Terminating forcefully...
+[INFO] com.hazelcast.instance.Node - [172.25.27.14]:5701 [dev] [3.4] Shutting down multicast service...
+[INFO] com.hazelcast.instance.Node - [172.25.27.14]:5701 [dev] [3.4] Shutting down connection manager...
+[INFO] com.hazelcast.core.LifecycleService - [127.0.0.1]:5702 [dev] [3.4] Address[127.0.0.1]:5702 is SHUTTING_DOWN
+[INFO] com.cumulus.repo.config.CacheConfiguration - Remove Cache Manager metrics
+[INFO] com.cumulus.repo.config.CacheConfiguration - Closing Cache Manager
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4:02.772s
+[INFO] Finished at: Thu Mar 26 11:38:42 CET 2015
+[INFO] Final Memory: 21M/246M
+[INFO] ------------------------------------------------------------------------

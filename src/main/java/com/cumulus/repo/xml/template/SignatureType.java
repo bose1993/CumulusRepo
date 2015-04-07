@@ -2,21 +2,23 @@
 // Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
-// Generato il: 2015.03.19 alle 02:09:45 PM CET 
+// Generato il: 2015.04.07 alle 04:45:53 PM CEST 
 //
 
-
 package com.cumulus.repo.xml.template;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java per signatureType complex type.
+ * <p>
+ * Classe Java per signatureType complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>
+ * Il seguente frammento di schema specifica il contenuto previsto contenuto in
+ * questa classe.
  * 
  * <pre>
  * &lt;complexType name="signatureType">
@@ -34,63 +36,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "signatureType", propOrder = {
-    "name",
-    "role"
-})
+@XmlType(name = "signatureType", propOrder = { "name", "role" })
 public class SignatureType {
 
-    @XmlElement(name = "Name", required = true)
-    protected String name;
-    @XmlElement(name = "Role", required = true)
-    protected String role;
+	@XmlElement(name = "Name", required = true)
+	protected String name;
+	@XmlElement(name = "Role", required = true)
+	protected String role;
 
-    /**
-     * Recupera il valore della proprietà name.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Recupera il valore della proprietà name.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Imposta il valore della proprietà name.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Imposta il valore della proprietà name.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
-    /**
-     * Recupera il valore della proprietà role.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRole() {
-        return role;
-    }
+	/**
+	 * Recupera il valore della proprietà role.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getRole() {
+		return role;
+	}
 
-    /**
-     * Imposta il valore della proprietà role.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRole(String value) {
-        this.role = value;
-    }
+	/**
+	 * Imposta il valore della proprietà role.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setRole(String value) {
+		this.role = value;
+	}
 
 }

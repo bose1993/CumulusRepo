@@ -5,17 +5,24 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://www.cumulus.org/certificate/model/test">
 
-	
+
     <xs:complexType name="TestCertificationModel">
         <xs:sequence>
-            <xsd:element name="CertificationModelTemplateID" type="xs:string" maxOccurs="1" minOccurs="1"/>
+            <xsd:element name="CertificationModelTemplateID" maxOccurs="1" minOccurs="1">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xs:string">
+                            <xsd:attribute name="version" type="xs:decimal" use="optional"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
             <xs:element name="Collectors" type="CollectorType" maxOccurs="1" minOccurs="1"> </xs:element>
             <xs:element name="Signature" type="signatureType"/>
             <xs:element name="ToC" type="tocType"/>
             <xsd:element name="SecurityProperty" type="securityPropertyType"/>
         </xs:sequence>
     </xs:complexType>
-
     <!-- INIZIO signatureType -->
     <xs:complexType name="signatureType">
         <xs:sequence>
@@ -82,7 +89,7 @@
         <xs:attribute name="class" type="xs:anyURI" use="required"/>
     </xs:complexType>
     <!-- FINE securityPropertyType -->
-    
+
     <!-- INIZIO ToC -->
     <xs:complexType name="tocType">
         <xs:sequence>
@@ -105,7 +112,8 @@
     <!-- INIZIO collectors -->
     <xs:complexType name="CollectorType">
         <xs:sequence>
-            <xs:element name="AbstractCollector" type="AbstracCollectorType" maxOccurs="unbounded" minOccurs="1"/>
+            <xs:element name="AbstractCollector" type="AbstracCollectorType" maxOccurs="unbounded"
+                minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <!-- AbstracCollectorType -->
@@ -126,7 +134,8 @@
             <xs:element name="Capability" type="CapabilityType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="TestType" type="xs:string"/>
             <xs:element name="TestDescription" type="xs:string"/>
-            <xs:element name="TestGenerationModelLink" type="xs:anyURI" default="http://www.cumulus-project.eu"/>
+            <xs:element name="TestGenerationModelLink" type="xs:anyURI"
+                default="http://www.cumulus-project.eu"/>
             <xs:element name="TestAttributes" maxOccurs="1" minOccurs="1">
                 <xs:complexType>
                     <xs:sequence maxOccurs="unbounded">
@@ -158,7 +167,7 @@
         <xs:sequence>
             <xs:element name="Attacker" type="xs:string"> </xs:element>
             <xs:element name="AttackName" type="xs:string"/>
-       <!-- <xs:element name="AttackerCapabilities">
+            <!-- <xs:element name="AttackerCapabilities">
                 <xs:complexType>
                     <xs:sequence maxOccurs="unbounded">
                         <xs:element name="CapabilityId" type="xs:integer"/>

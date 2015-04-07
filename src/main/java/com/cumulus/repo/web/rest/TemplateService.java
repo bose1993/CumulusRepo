@@ -13,10 +13,12 @@ import javax.xml.bind.JAXBException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,16 +28,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.codahale.metrics.annotation.Timed;
 import com.cumulus.repo.domain.Property;
+import com.cumulus.repo.domain.PropertyAttribute;
 import com.cumulus.repo.domain.Template;
 import com.cumulus.repo.domain.Toc;
 import com.cumulus.repo.domain.User;
+import com.cumulus.repo.repository.PropertyAttributeRepository;
 import com.cumulus.repo.repository.PropertyRepository;
 import com.cumulus.repo.repository.TemplateRepository;
 import com.cumulus.repo.repository.TocRepository;
 import com.cumulus.repo.service.UserService;
+import com.cumulus.repo.web.exceptions.PropertyAttributeException;
 import com.cumulus.repo.web.exceptions.PropertyNotFoundExcpetion;
 import com.cumulus.repo.web.rest.util.PaginationUtil;
 import com.cumulus.repo.xml.template.PropertyType.PropertyPerformance;
+import com.cumulus.repo.xml.template.PropertyType.PropertyPerformance.PropertyPerformanceRow;
+import com.cumulus.repo.xml.template.PropertyType.PropertyPerformance.PropertyPerformanceRow.PropertyPerformanceCell;
 import com.cumulus.repo.xml.template.TestCertificationModel;
 import com.cumulus.repo.xml.utils.JaxbUnmarshal;
 
@@ -56,9 +63,11 @@ public class TemplateService {
 	private TocRepository tocRepository;
 	@Inject
 	private PropertyRepository propertyRepository;
+	@Inject
+	private PropertyAttributeRepository propertyAttributesRepository;
 
 	private Template parseXMLTemplate(String XML) throws JAXBException,
-			PropertyNotFoundExcpetion {
+			PropertyNotFoundExcpetion, PropertyAttributeException {
 		JaxbUnmarshal jx = new JaxbUnmarshal(XML,
 				"com.cumulus.repo.xml.template");
 		Template template = new Template();
@@ -68,7 +77,11 @@ public class TemplateService {
 			JAXBElement<TestCertificationModel> obj = (JAXBElement<TestCertificationModel>) result;
 			TestCertificationModel t = obj.getValue();
 			template.setXML(XML);
-			template.setXmlId(t.getCertificationModelTemplateID());
+			template.setXmlId(t.getCertificationModelTemplateID().getValue());
+			if (t.getCertificationModelTemplateID().getVersion() != null) {
+				template.setVersion(t.getCertificationModelTemplateID()
+						.getVersion());
+			}
 			Toc toc = this.tocRepository.findOneByName(t.getToC()
 					.getConcreteToc());
 			if (toc == null) {
@@ -86,6 +99,12 @@ public class TemplateService {
 								.getSecurityPropertyDefinition() + " Not found");
 			}
 			template.setProperty(property);
+			PropertyPerformance prop = t.getSecurityProperty().getSProperty()
+					.getPropertyPerformance();
+			if (!this.checkPropertyAttribute(prop, property.getId())) {
+				throw new PropertyAttributeException(
+						"Proprety Attribute not found");
+			}
 			return template;
 
 		} else {
@@ -94,8 +113,27 @@ public class TemplateService {
 
 	}
 
-	private boolean checkPropertyAttribute(PropertyPerformance pp) {
-		return false;
+	private boolean checkPropertyAttribute(PropertyPerformance pp, long id) {
+		for (int i = 0; i < pp.getPropertyPerformanceRow().size(); i++) {
+			PropertyPerformanceRow ppr = pp.getPropertyPerformanceRow().get(i);
+			for (int j = 0; j < ppr.getPropertyPerformanceCell().size(); j++) {
+				PropertyPerformanceCell ppc = ppr.getPropertyPerformanceCell()
+						.get(j);
+				String name = ppc.getName();
+				PropertyAttribute pa = this.propertyAttributesRepository
+						.findOneByProperty_idAndName(id, name);
+				if (pa == null) {
+					return false;
+				} else {
+					if (pa.getRequired()) {
+						if (ppc.getValue() == null) {
+							return false;
+						}
+					}
+				}
+			}
+		}
+		return true;
 
 	}
 
@@ -112,8 +150,18 @@ public class TemplateService {
 		try {
 			template = this.parseXMLTemplate(XML);
 			User user = userService.getUserWithAuthorities();
-			template.setVersion(new BigDecimal(1.0));
+			if (template.getVersion() == null) {
+				template.setVersion(new BigDecimal(1.0));
+			}
 			template.setMaster(true);
+			Sort s = new Sort(Sort.Direction.DESC, "version");
+			if (this.templateRepository.findByXmlid(template.getXmlId(), s) != null) {
+				return ResponseEntity
+						.badRequest()
+						.header("Failure",
+								"A new template cannot already have an ID")
+						.build();
+			}
 			if (user == null) {
 				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 			} else {
@@ -126,6 +174,12 @@ public class TemplateService {
 					.badRequest()
 					.header("Failure",
 							"Property Not Found Insert Property First").build();
+		} catch (PropertyAttributeException e) {
+			return ResponseEntity
+					.badRequest()
+					.header("Failure",
+							"Property Attribute Not Found Insert Property Attribute First")
+					.build();
 		}
 		if (template.getId() != null) {
 			return ResponseEntity
@@ -142,19 +196,56 @@ public class TemplateService {
 	 * PUT /templates -> Updates an existing template.
 	 */
 	@RequestMapping(value = "/templates", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@Transactional
 	@Timed
-	public ResponseEntity<Void> update(@RequestBody Template template)
+	public ResponseEntity<Void> update(@RequestBody String XML)
 			throws URISyntaxException {
-		log.debug("REST request to update Template : {}", template);
-		User user = userService.getUserWithAuthorities();
-		if (user == null) {
+		log.debug("REST request to update Template By XML: {}", XML);
+		Template template = null;
+
+		try {
+			template = this.parseXMLTemplate(XML);
+			User user = userService.getUserWithAuthorities();
+
+			template.setMaster(true);
+			Sort s = new Sort(Sort.Direction.DESC, "version");
+			List<Template> l = this.templateRepository.findByXmlid(
+					template.getXmlId(), s);
+			if (l == null) {
+				return ResponseEntity
+						.badRequest()
+						.header("Failure",
+								"An existing template must have an ID").build();
+			}
+			if (template.getVersion() == null) {
+				BigDecimal d = l.get(0).getVersion();
+				d = d.add(new BigDecimal(0.1));
+				template.setVersion(d);
+			}
+			if (user == null) {
+				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			} else {
+				template.setUser(user);
+			}
+		} catch (JAXBException e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
-			template.setUser(user);
+		} catch (PropertyNotFoundExcpetion e) {
+			return ResponseEntity
+					.badRequest()
+					.header("Failure",
+							"Property Not Found Insert Property First").build();
+		} catch (PropertyAttributeException e) {
+			return ResponseEntity
+					.badRequest()
+					.header("Failure",
+							"Property Attribute Not Found Insert Property Attribute First")
+					.build();
 		}
 		if (template.getId() == null) {
 			// return create(template);
 		}
+		templateRepository.resetAllMaster(template.getXmlId());
+
 		templateRepository.save(template);
 		return ResponseEntity.ok().build();
 	}
