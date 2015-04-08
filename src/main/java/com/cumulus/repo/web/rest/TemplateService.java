@@ -286,11 +286,31 @@ public class TemplateService {
 
 	/**
 	 * DELETE /templates/:id -> delete the "id" template.
+	 * 
+	 * @return
 	 */
 	@RequestMapping(value = "/templates/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
-	public void delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		log.debug("REST request to delete Template : {}", id);
-		templateRepository.delete(id);
+		Template template = templateRepository.findOne(id);
+
+		if (template == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+
+		if (template.getMaster()) {
+			templateRepository.delete(id);
+			Sort s = new Sort(Sort.Direction.DESC, "version");
+			List<Template> l = this.templateRepository.findByXmlid(
+					template.getXmlId(), s);
+			Template newMaster = l.get(0);
+			newMaster.setMaster(true);
+			templateRepository.save(newMaster);
+
+		} else {
+			templateRepository.delete(id);
+		}
+		return ResponseEntity.ok().build();
 	}
 }
