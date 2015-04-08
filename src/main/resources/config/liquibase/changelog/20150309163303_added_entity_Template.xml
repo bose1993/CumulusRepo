@@ -18,6 +18,7 @@
             <column name="xml" type="varchar(255)"/>
             <column name="version" type="decimal(10,2)"/>
             <column name="master" type="bit"/>
+            <column name="xml_id" type="varchar(255)"/>
             <column name="toc_id" type="bigint"/>
             <column name="property_id" type="bigint"/>
         </createTable>

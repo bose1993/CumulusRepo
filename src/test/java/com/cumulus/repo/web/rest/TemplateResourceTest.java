@@ -46,6 +46,8 @@ public class TemplateResourceTest {
 
     private static final Boolean DEFAULT_MASTER = false;
     private static final Boolean UPDATED_MASTER = true;
+    private static final String DEFAULT_XML_ID = "SAMPLE_TEXT";
+    private static final String UPDATED_XML_ID = "UPDATED_TEXT";
 
     @Inject
     private TemplateRepository templateRepository;
@@ -68,6 +70,7 @@ public class TemplateResourceTest {
         template.setXML(DEFAULT_XML);
         template.setVersion(DEFAULT_VERSION);
         template.setMaster(DEFAULT_MASTER);
+        template.setXmlId(DEFAULT_XML_ID);
     }
 
     @Test
@@ -89,6 +92,7 @@ public class TemplateResourceTest {
         assertThat(testTemplate.getXML()).isEqualTo(DEFAULT_XML);
         assertThat(testTemplate.getVersion()).isEqualTo(DEFAULT_VERSION);
         assertThat(testTemplate.getMaster()).isEqualTo(DEFAULT_MASTER);
+        assertThat(testTemplate.getXmlId()).isEqualTo(DEFAULT_XML_ID);
     }
 
     @Test
@@ -104,7 +108,8 @@ public class TemplateResourceTest {
                 .andExpect(jsonPath("$.[0].id").value(template.getId().intValue()))
                 .andExpect(jsonPath("$.[0].XML").value(DEFAULT_XML.toString()))
                 .andExpect(jsonPath("$.[0].version").value(DEFAULT_VERSION.intValue()))
-                .andExpect(jsonPath("$.[0].master").value(DEFAULT_MASTER.booleanValue()));
+                .andExpect(jsonPath("$.[0].master").value(DEFAULT_MASTER.booleanValue()))
+                .andExpect(jsonPath("$.[0].xmlid").value(DEFAULT_XML_ID.toString()));
     }
 
     @Test
@@ -120,7 +125,8 @@ public class TemplateResourceTest {
             .andExpect(jsonPath("$.id").value(template.getId().intValue()))
             .andExpect(jsonPath("$.XML").value(DEFAULT_XML.toString()))
             .andExpect(jsonPath("$.version").value(DEFAULT_VERSION.intValue()))
-            .andExpect(jsonPath("$.master").value(DEFAULT_MASTER.booleanValue()));
+            .andExpect(jsonPath("$.master").value(DEFAULT_MASTER.booleanValue()))
+            .andExpect(jsonPath("$.xmlid").value(DEFAULT_XML_ID.toString()));
     }
 
     @Test
@@ -141,6 +147,7 @@ public class TemplateResourceTest {
         template.setXML(UPDATED_XML);
         template.setVersion(UPDATED_VERSION);
         template.setMaster(UPDATED_MASTER);
+        template.setXmlId(UPDATED_XML_ID);
         restTemplateMockMvc.perform(put("/api/templates")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(template)))
@@ -153,6 +160,7 @@ public class TemplateResourceTest {
         assertThat(testTemplate.getXML()).isEqualTo(UPDATED_XML);
         assertThat(testTemplate.getVersion()).isEqualTo(UPDATED_VERSION);
         assertThat(testTemplate.getMaster()).isEqualTo(UPDATED_MASTER);
+        assertThat(testTemplate.getXmlId()).isEqualTo(UPDATED_XML_ID);
     }
 
     @Test

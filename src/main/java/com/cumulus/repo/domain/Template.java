@@ -1,14 +1,19 @@
 package com.cumulus.repo.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * A Template.
@@ -18,101 +23,128 @@ import java.util.Set;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Template implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @Column(name = "xml")
-    private String XML;
+	@Column(name = "xml")
+	private String XML;
 
-    @Column(name = "version", precision=10, scale=2)
-    private BigDecimal version;
+	@Column(name = "version", precision = 10, scale = 2)
+	private BigDecimal version;
 
-    @Column(name = "master")
-    private Boolean master;
+	@Column(name = "master")
+	private Boolean master;
 
-    @ManyToOne
-    private Toc toc;
+	@Column(name = "xml_id")
+	private String xmlid;
 
-    @ManyToOne
-    private Property property;
+	@Column(name = "creation_timestamp", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+	private Date creation_timestammp;
 
-    public Long getId() {
-        return id;
-    }
+	@ManyToOne
+	private Toc toc;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@ManyToOne
+	private Property property;
 
-    public String getXML() {
-        return XML;
-    }
+	@ManyToOne
+	private User user;
 
-    public void setXML(String XML) {
-        this.XML = XML;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public BigDecimal getVersion() {
-        return version;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setVersion(BigDecimal version) {
-        this.version = version;
-    }
+	public String getXML() {
+		return XML;
+	}
 
-    public Boolean getMaster() {
-        return master;
-    }
+	public void setXML(String XML) {
+		this.XML = XML;
+	}
 
-    public void setMaster(Boolean master) {
-        this.master = master;
-    }
+	public BigDecimal getVersion() {
+		return version;
+	}
 
-    public Toc getToc() {
-        return toc;
-    }
+	public void setVersion(BigDecimal version) {
+		this.version = version;
+	}
 
-    public void setToc(Toc toc) {
-        this.toc = toc;
-    }
+	public Boolean getMaster() {
+		return master;
+	}
 
-    public Property getProperty() {
-        return property;
-    }
+	public void setMaster(Boolean master) {
+		this.master = master;
+	}
 
-    public void setProperty(Property property) {
-        this.property = property;
-    }
+	public String getXmlId() {
+		return xmlid;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setXmlId(String xmlid) {
+		this.xmlid = xmlid;
+	}
 
-        Template template = (Template) o;
+	public Toc getToc() {
+		return toc;
+	}
 
-        if (id != null ? !id.equals(template.id) : template.id != null) return false;
+	public void setToc(Toc toc) {
+		this.toc = toc;
+	}
 
-        return true;
-    }
+	public Property getProperty() {
+		return property;
+	}
 
-    @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
-    }
+	public void setProperty(Property property) {
+		this.property = property;
+	}
 
-    @Override
-    public String toString() {
-        return "Template{" +
-                "id=" + id +
-                ", XML='" + XML + "'" +
-                ", version='" + version + "'" +
-                ", master='" + master + "'" +
-                '}';
-    }
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public Date getCreationeTimestamp() {
+		return this.creation_timestammp;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+
+		Template template = (Template) o;
+
+		if (id != null ? !id.equals(template.id) : template.id != null)
+			return false;
+
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return (int) (id ^ (id >>> 32));
+	}
+
+	@Override
+	public String toString() {
+		return "Template{" + "id=" + id + ", XML='" + XML + "'" + ", version='"
+				+ version + "'" + ", master='" + master + "'" + ", xmlid='"
+				+ xmlid + "'" + '}';
+	}
 }

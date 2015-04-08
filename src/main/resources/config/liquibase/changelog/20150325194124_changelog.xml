@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+   <changeSet author="ebosetti (generated)" id="1427308891005-1">
+      <createTable tableName="T_PROPERTY">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="T_PROPERTYPK"/>
+         </column>
+         <column name="rules" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ebosetti (generated)" id="1427308891005-2">
+      <createTable tableName="T_PROPERTYATTRIBUTE">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="T_PROPERTYATTRIBUTEPK"/>
+         </column>
+         <column name="name" type="VARCHAR(255)"/>
+         <column name="required" type="BOOLEAN"/>
+         <column name="type" type="VARCHAR(255)"/>
+         <column name="property_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="ebosetti (generated)" id="1427308891005-3">
+      <addColumn tableName="T_TEMPLATE">
+         <column name="user_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="ebosetti (generated)" id="1427308891005-4">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="T_TEMPLATE"
+                               constraintName="FK_a7kqi1wlqoh170a4xx2b0bgdg"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="T_USER"/>
+   </changeSet>
+   <changeSet author="ebosetti (generated)" id="1427308891005-5">
+      <addForeignKeyConstraint baseColumnNames="property_id"
+                               baseTableName="T_TEMPLATE"
+                               constraintName="FK_dupp3g2aaspucfd9n7p50jeue"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="T_PROPERTY"/>
+   </changeSet>
+   <changeSet author="ebosetti (generated)" id="1427308891005-6">
+      <addForeignKeyConstraint baseColumnNames="property_id"
+                               baseTableName="T_PROPERTYATTRIBUTE"
+                               constraintName="FK_f9d1yskj9g3njqemf0l3ljqao"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="T_PROPERTY"/>
+   </changeSet>
+</databaseChangeLog>

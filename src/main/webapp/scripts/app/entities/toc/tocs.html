@@ -30,6 +30,11 @@
                             <input type="text" class="form-control" name="description"
                                    ng-model="toc.description">
                         </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.toc.name">Name</label>
+                            <input type="text" class="form-control" name="name"
+                                   ng-model="toc.name">
+                        </div>
 
 
                     </div>
@@ -77,6 +82,7 @@
                 <tr>
                     <th>ID</th>
                     <th translate="cumulusApp.toc.description">Description</th>
+                    <th translate="cumulusApp.toc.name">Name</th>
                     <th></th>
                 </tr>
             </thead>
@@ -84,6 +90,7 @@
                 <tr ng-repeat="toc in tocs">
                     <td><a ui-sref="tocDetail({id:toc.id})">{{toc.id}}</a></td>
                     <td>{{toc.description}}</td>
+                    <td>{{toc.name}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="tocDetail({id:toc.id})"

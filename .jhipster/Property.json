@@ -1,0 +1,41 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "template_r",
+            "relationshipNameCapitalized": "Template_r",
+            "relationshipFieldName": "template_r",
+            "otherEntityName": "template",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Template"
+        },
+ 	{
+            "relationshipId": 2,
+            "relationshipName": "attribute",
+            "relationshipNameCapitalized": "Attribute",
+            "relationshipFieldName": "attribute_r",
+            "otherEntityName": "propertyattribute",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "PropertyAttribute"
+        }
+	
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "rules",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Rules",
+            "fieldNameUnderscored": "rules"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150310145305",
+    "pagination": "infinite-scroll"
+}

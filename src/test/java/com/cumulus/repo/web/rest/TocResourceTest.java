@@ -39,6 +39,8 @@ public class TocResourceTest {
 
     private static final String DEFAULT_DESCRIPTION = "SAMPLE_TEXT";
     private static final String UPDATED_DESCRIPTION = "UPDATED_TEXT";
+    private static final String DEFAULT_NAME = "SAMPLE_TEXT";
+    private static final String UPDATED_NAME = "UPDATED_TEXT";
 
     @Inject
     private TocRepository tocRepository;
@@ -59,6 +61,7 @@ public class TocResourceTest {
     public void initTest() {
         toc = new Toc();
         toc.setDescription(DEFAULT_DESCRIPTION);
+        toc.setName(DEFAULT_NAME);
     }
 
     @Test
@@ -78,6 +81,7 @@ public class TocResourceTest {
         assertThat(tocs).hasSize(1);
         Toc testToc = tocs.iterator().next();
         assertThat(testToc.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testToc.getName()).isEqualTo(DEFAULT_NAME);
     }
 
     @Test
@@ -91,7 +95,8 @@ public class TocResourceTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[0].id").value(toc.getId().intValue()))
-                .andExpect(jsonPath("$.[0].description").value(DEFAULT_DESCRIPTION.toString()));
+                .andExpect(jsonPath("$.[0].description").value(DEFAULT_DESCRIPTION.toString()))
+                .andExpect(jsonPath("$.[0].name").value(DEFAULT_NAME.toString()));
     }
 
     @Test
@@ -105,7 +110,8 @@ public class TocResourceTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(toc.getId().intValue()))
-            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()));
     }
 
     @Test
@@ -124,6 +130,7 @@ public class TocResourceTest {
 
         // Update the toc
         toc.setDescription(UPDATED_DESCRIPTION);
+        toc.setName(UPDATED_NAME);
         restTocMockMvc.perform(put("/api/tocs")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(toc)))
@@ -134,6 +141,7 @@ public class TocResourceTest {
         assertThat(tocs).hasSize(1);
         Toc testToc = tocs.iterator().next();
         assertThat(testToc.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testToc.getName()).isEqualTo(UPDATED_NAME);
     }
 
     @Test

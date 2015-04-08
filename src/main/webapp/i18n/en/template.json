@@ -15,6 +15,7 @@
             "XML": "XML",
             "version": "Version",
             "master": "Master",
+            "xmlid": "XmlId",
             "toc": "toc",
             "property": "property"
         }

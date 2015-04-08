@@ -1,0 +1,65 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "toc",
+            "relationshipNameCapitalized": "Toc",
+            "relationshipFieldName": "toc",
+            "otherEntityName": "toc",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Toc",
+            "otherEntityField": "description"
+        },
+	{
+            "relationshipId": 2,
+            "relationshipName": "property",
+            "relationshipNameCapitalized": "Property",
+            "relationshipFieldName": "property",
+            "otherEntityName": "property",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Property",
+            "otherEntityField": "rules"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "XML",
+            "fieldType": "String",
+            "fieldNameCapitalized": "XML",
+            "fieldNameUnderscored": "xml"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "version",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Version",
+            "fieldNameUnderscored": "version"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "master",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "Master",
+            "fieldNameUnderscored": "master"
+        },
+	{
+            "fieldId": 4,
+            "fieldName": "xmlid",
+            "fieldType": "String",
+            "fieldNameCapitalized": "XmlId",
+            "fieldNameUnderscored": "xml_id"
+
+
+	}
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150309163303",
+    "pagination": "infinite-scroll"
+}

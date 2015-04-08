@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cumulusApp')
-    .controller('PropertyDetailController', function ($scope, $stateParams, Property, Template) {
+    .controller('PropertyDetailController', function ($scope, $stateParams, Property, Template, PropertyAttribute) {
         $scope.property = {};
         $scope.load = function (id) {
             Property.get({id: id}, function(result) {

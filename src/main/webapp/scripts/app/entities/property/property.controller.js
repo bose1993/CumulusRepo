@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('cumulusApp')
-    .controller('PropertyController', function ($scope, Property, Template, ParseLinks) {
+    .controller('PropertyController', function ($scope, Property, Template, PropertyAttribute, ParseLinks) {
         $scope.propertys = [];
         $scope.templates = Template.query();
+        $scope.propertyattributes = PropertyAttribute.query();
         $scope.page = 1;
         $scope.loadAll = function() {
             Property.query({page: $scope.page, per_page: 20}, function(result, headers) {

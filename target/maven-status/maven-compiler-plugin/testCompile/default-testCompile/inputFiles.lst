@@ -1,6 +1,7 @@
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/web/rest/TestUtil.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/service/UserServiceTest.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/web/rest/TemplateResourceTest.java
+/home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/web/rest/PropertyAttributeResourceTest.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/web/rest/UserResourceTest.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/security/SecurityUtilsTest.java
 /home/ebosetti/Documents/workspace-sts-3.6.3.SR1/Cumulus/src/test/java/com/cumulus/repo/web/rest/PropertyResourceTest.java
