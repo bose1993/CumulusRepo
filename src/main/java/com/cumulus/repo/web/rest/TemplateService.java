@@ -250,6 +250,24 @@ public class TemplateService {
 		return ResponseEntity.ok().build();
 	}
 
+	@RequestMapping(value = "/templates/ChangeMaster/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@Transactional
+	@Timed
+	public ResponseEntity<Void> changeMaster(@PathVariable Long id) {
+		Template t = this.templateRepository.findOne(id);
+		if (t.getMaster()) {
+			return ResponseEntity.badRequest()
+					.header("Failure", "Selected template is alredy master")
+					.build();
+		} else {
+			this.templateRepository.resetAllMaster(t.getXmlId());
+			t.setMaster(true);
+			this.templateRepository.save(t);
+		}
+		return null;
+
+	}
+
 	/**
 	 * GET /templates -> get all the templates.
 	 */
@@ -290,6 +308,7 @@ public class TemplateService {
 	 * @return
 	 */
 	@RequestMapping(value = "/templates/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@Transactional
 	@Timed
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		log.debug("REST request to delete Template : {}", id);
