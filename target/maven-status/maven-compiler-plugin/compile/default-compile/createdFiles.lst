@@ -51,6 +51,7 @@ com/cumulus/repo/xml/template/CapabilityType.class
 com/cumulus/repo/config/LocaleConfiguration.class
 com/cumulus/repo/xml/template/SecurityPropertyType.class
 com/cumulus/repo/config/MetricsConfiguration$SparkRegistry.class
+com/cumulus/repo/xml/template/TestCertificationModel$CertificationModelTemplateID.class
 com/cumulus/repo/config/DatabaseConfiguration.class
 com/cumulus/repo/xml/template/TestInstanceType.class
 com/cumulus/repo/config/metrics/JavaMailHealthIndicator.class

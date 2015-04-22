@@ -11,7 +11,7 @@
 
     <groupId>com.cumulus.repo</groupId>
     <artifactId>cumulus</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>cumulus</name>

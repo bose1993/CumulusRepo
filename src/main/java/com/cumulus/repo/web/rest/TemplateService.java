@@ -92,7 +92,9 @@ public class TemplateService {
 			}
 			template.setToc(toc);
 			Property property = this.propertyRepository.findOneByRules(t
-					.getSecurityProperty().getSecurityPropertyDefinition());
+					.getSecurityProperty().getSProperty().getClazz());
+			System.out.println(this.propertyRepository.findOneByRules(t
+					.getSecurityProperty().getSProperty().getClazz()));
 			if (property == null) {
 				throw new PropertyNotFoundExcpetion("Property "
 						+ t.getSecurityProperty()
@@ -155,12 +157,17 @@ public class TemplateService {
 			}
 			template.setMaster(true);
 			Sort s = new Sort(Sort.Direction.DESC, "version");
-			if (this.templateRepository.findByXmlid(template.getXmlId(), s) != null) {
+			if (!this.templateRepository.findByXmlid(template.getXmlId(), s)
+					.isEmpty()) {
+				log.debug("Lista"
+						+ this.templateRepository.findByXmlid(
+								template.getXmlId(), s));
+
 				return ResponseEntity
 						.badRequest()
 						.header("Failure",
-								"A new template cannot already have an ID")
-						.build();
+								"A new template cannot already have an XMLID. "
+										+ template.getXmlId()).build();
 			}
 			if (user == null) {
 				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -168,24 +175,29 @@ public class TemplateService {
 				template.setUser(user);
 			}
 		} catch (JAXBException e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return ResponseEntity.badRequest()
+					.header("Failure", e.getMessage()).build();
 		} catch (PropertyNotFoundExcpetion e) {
 			return ResponseEntity
 					.badRequest()
 					.header("Failure",
-							"Property Not Found Insert Property First").build();
+							"Property Not Found Insert Property First "
+									+ e.getMessage()).build();
 		} catch (PropertyAttributeException e) {
 			return ResponseEntity
 					.badRequest()
 					.header("Failure",
-							"Property Attribute Not Found Insert Property Attribute First")
+							"Property Attribute Not Found " + e.getMessage())
 					.build();
 		}
+		log.debug("ID del template estratto " + template.getId());
 		if (template.getId() != null) {
+
 			return ResponseEntity
 					.badRequest()
 					.header("Failure",
-							"A new template cannot already have an ID").build();
+							"A new template cannot already have an ID ("
+									+ template.getId() + ")").build();
 		}
 		templateRepository.save(template);
 		return ResponseEntity.created(
@@ -211,7 +223,7 @@ public class TemplateService {
 			Sort s = new Sort(Sort.Direction.DESC, "version");
 			List<Template> l = this.templateRepository.findByXmlid(
 					template.getXmlId(), s);
-			if (l == null) {
+			if (l.isEmpty()) {
 				return ResponseEntity
 						.badRequest()
 						.header("Failure",
