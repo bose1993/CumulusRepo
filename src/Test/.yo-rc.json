@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "baseName": "Test",
+    "packageName": "com.unimi.test",
+    "packageFolder": "com/unimi/test",
+    "authenticationType": "oauth2",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "rememberMeKey": "78bd688150ab50a6db3753a8b9121daea60fba1b"
+  }
+}

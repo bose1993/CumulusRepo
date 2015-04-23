@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('cumulusApp')
-    .controller('TemplateController', function ($scope, Template, Toc, Property, ParseLinks) {
+    .controller('TemplateController', function ($scope, Template, Toc, Property, ParseLinks,Principal) {
         $scope.templates = [];
         $scope.tocs = Toc.query();
         $scope.propertys = Property.query();
         $scope.page = 1;
+        $scope.isInRole = Principal.isInRole;
+
         $scope.loadAll = function() {
             Template.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));

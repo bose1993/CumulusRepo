@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('cumulusApp')
-    .controller('TocController', function ($scope, Toc, Template, ParseLinks) {
+    .controller('TocController', function ($scope, Toc, Template, ParseLinks,Principal) {
         $scope.tocs = [];
         $scope.templates = Template.query();
         $scope.page = 1;
+        $scope.isInRole = Principal.isInRole;
         $scope.loadAll = function() {
             Toc.query({page: $scope.page, per_page: 20}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));

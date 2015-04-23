@@ -2,7 +2,7 @@
 
 angular.module('cumulusApp')
     .factory('Template', function ($resource) {
-        return $resource('api/templates/:id', {}, {
+        return $resource('crud/templates/:id', {}, {
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',

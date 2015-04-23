@@ -107,16 +107,19 @@
                     <td>{{propertyAttribute.property.rules}}</td>
                     <td>
                         <button type="submit"
+                
                                 ui-sref="propertyAttributeDetail({id:propertyAttribute.id})"
                                 class="btn btn-info">
                             <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
                         </button>
                         <button type="submit"
+                        		ng-show="isInRole('ROLE_ADMIN')"
                                 ng-click="update(propertyAttribute.id)"
                                 class="btn btn-primary">
                             <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
                         </button>
                         <button type="submit"
+                        		ng-show="isInRole('ROLE_ADMIN')"
                                 ng-click="delete(propertyAttribute.id)"
                                 class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>

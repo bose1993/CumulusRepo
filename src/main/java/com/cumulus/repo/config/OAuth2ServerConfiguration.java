@@ -168,6 +168,7 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -220,6 +221,14 @@ public class OAuth2ServerConfiguration {
 					.hasAnyAuthority(AuthoritiesConstants.USER)
 					.antMatchers("/api/logs/**")
 					.hasAnyAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers(HttpMethod.POST, "/crud/**")
+					.hasAnyAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers(HttpMethod.PUT, "/crud/**")
+					.hasAnyAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers(HttpMethod.DELETE, "/crud/**")
+					.hasAnyAuthority(AuthoritiesConstants.ADMIN)
+					.antMatchers(HttpMethod.GET, "/crud/**")
+					.hasAnyAuthority(AuthoritiesConstants.USER)
 					.antMatchers("/api/**").authenticated()
 					.antMatchers("/metrics/**")
 					.hasAuthority(AuthoritiesConstants.ADMIN)

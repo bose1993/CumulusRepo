@@ -16,7 +16,7 @@ angular.module('cumulusApp')
                 if (!_authenticated || !_identity.roles) {
                     return false;
                 }
-
+                console.log(_identity.roles.indexOf(role) !== -1);
                 return _identity.roles.indexOf(role) !== -1;
             },
             isInAnyRole: function (roles) {
