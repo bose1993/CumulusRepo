@@ -1,70 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test:testBasedCertifcationModel xmlns:sch="http://www.ascc.net/xml/schematron"
- xmlns:cm="http://www.cumulus.org/certificate/model"
- xmlns:test="http://www.cumulus.org/certificate/model/test"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-        <CertificationModelTemplateID>str1234</CertificationModelTemplateID>
-        <Collectors>
-            <AbstractCollector Id="ID123">
-                <TestCategory>Functionality</TestCategory>
-                <Actionability>
-                    <Description>str1234</Description>
-                    <Mechanism>str1234</Mechanism>
-                    <MechanismURI>http://www.xsd2xml.com</MechanismURI>
-                </Actionability>
-                <Capability>
-                    <Attacker>str1234</Attacker>
-                    <AttackName>str1234</AttackName>
-                    <AttackerCapabilities>
-                        <CapabilityId>1234</CapabilityId>
-                        <AttackerCapability>str1234</AttackerCapability>
-                    </AttackerCapabilities>
-                </Capability>
-                <TestType>str1234</TestType>
-                <TestDescription>str1234</TestDescription>
-                <TestGenerationModelLink>http://www.xsd2xml.com</TestGenerationModelLink>
-                <TestAttributes>
-                    <TestAttribute>
-                        <ID>1234</ID>
-                        <Name>str1234</Name>
-                        <Value />
-                    </TestAttribute>
-                </TestAttributes>
-                <TestCases>
-                    <TestCase>
-                        <ID>1234</ID>
-                        <Description>str1234</Description>
-                        <TestInstance Operation="str1234">
-                            <Preconditions>str1234</Preconditions>
-                            <HiddenCommunications>str1234</HiddenCommunications>
-                            <Input>str1234</Input>
-                            <ExpectedOutput>str1234</ExpectedOutput>
-                            <PostConditions>str1234</PostConditions>
-                        </TestInstance>
-                    </TestCase>
-                </TestCases>
-            </AbstractCollector>
-        </Collectors>
-        <Signature>
-            <Name>str1234</Name>
-            <Role>str1234</Role>
-        </Signature>
-        <ToC>
-            <CloudLayer>SaaS</CloudLayer>
-            <ConcreteToc>str1234</ConcreteToc>
-            <TocDescription>str1234</TocDescription>
-        </ToC>
-        <SecurityProperty SecurityPropertyDefinition="str1234">
-            <sProperty class="http://www.xsd2xml.com">
-                <propertyPerformance>
-                    <propertyPerformanceRow>
-                        <propertyPerformanceCell name="str1234">???</propertyPerformanceCell>
-                    </propertyPerformanceRow>
-                </propertyPerformance>
-                <propertyParameterList>
-                    <propertyParameter name="str1234">???</propertyParameter>
-                </propertyParameterList>
-            </sProperty>
-        </SecurityProperty>
+    xmlns:cm="http://www.cumulus.org/certificate/model"
+    xmlns:test="http://www.cumulus.org/certificate/model/test"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CertificationModelTemplateID version="3.0">pilot</CertificationModelTemplateID>
+    <Collectors>
+        <AbstractCollector Id="0">
+            <TestCategory>Functionality.Input partitioning</TestCategory>
+            <TestType>Random Input</TestType>
+            <TestDescription>lockout after n tries</TestDescription>
+            <TestGenerationModelLink>www.cumulus-project.eu/ehealth.sts</TestGenerationModelLink>
+            <TestAttributes>
+                <TestAttribute>
+                    <ID>1</ID>
+                    <Name>testAttribute</Name>
+                    <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string"
+                        >value</Value>
+                </TestAttribute>
+            </TestAttributes>
+            <TestCases>
+                <TestCase>
+                    <ID>1</ID>
+                    <Description>lockout</Description>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>admin=admin password=admin123</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>username=usertest password=pass1234</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>username=usertest password=xxx</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>username=usertest password=password</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>username=usertest password=pwdtest</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>username=usertest password=usertest</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>username=usertest password=passwordeasy</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                    <TestInstance Operation="b">
+                        <Preconditions>b</Preconditions>
+                        <HiddenCommunications>b</HiddenCommunications>
+                        <Input>lockout=true</Input>
+                        <ExpectedOutput>b</ExpectedOutput>
+                        <PostConditions>b</PostConditions>
+                    </TestInstance>
+                </TestCase>
+            </TestCases>
+        </AbstractCollector>
+    </Collectors>
+    <Signature>
+        <Name>Università degli Studi di Milano</Name>
+        <Role>Tester</Role>
+    </Signature>
+    <ToC>
+        <CloudLayer>SaaS</CloudLayer>
+        <ConcreteToc>atos-pilot</ConcreteToc>
+        <TocDescription>clinical reports web service</TocDescription>
+    </ToC>
+    <SecurityProperty
+        SecurityPropertyDefinition="Series of N unsuccesful logins, suspension of account (for a duration T)">
+        <sProperty class="IAM:Account-control:Limitation-of-failed-user-authentication">
+            <propertyPerformance>
+                <propertyPerformanceRow>
+                    <propertyPerformanceCell name="delayC">0</propertyPerformanceCell>
+                    <propertyPerformanceCell name="delayB">0</propertyPerformanceCell>
+                    <propertyPerformanceCell name="triggerCount">5</propertyPerformanceCell>
+                </propertyPerformanceRow>
+            </propertyPerformance>
+            <propertyParameterList/>
+        </sProperty>
+    </SecurityProperty>
 </test:testBasedCertifcationModel>

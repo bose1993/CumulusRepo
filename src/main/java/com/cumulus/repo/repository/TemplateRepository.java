@@ -1,5 +1,6 @@
 package com.cumulus.repo.repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
@@ -15,6 +16,8 @@ import com.cumulus.repo.domain.Template;
 public interface TemplateRepository extends JpaRepository<Template, Long> {
 
 	List<Template> findByXmlid(String id, Sort s);
+
+	Template findByXmlidAndVersion(String xmlid, BigDecimal version);
 
 	@Modifying
 	@Query("update Template t set t.master = false where t.xmlid = ?1")

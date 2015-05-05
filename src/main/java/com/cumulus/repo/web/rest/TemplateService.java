@@ -103,7 +103,9 @@ public class TemplateService {
 					.getPropertyPerformance();
 			if (!this.checkPropertyAttribute(prop, property.getId())) {
 				throw new PropertyAttributeException(
-						"Proprety Attribute not found");
+						"Proprety Attribute not found " + prop);
+
+				// TODO: Inserire nome attributo;
 			}
 			return template;
 
@@ -122,6 +124,7 @@ public class TemplateService {
 				String name = ppc.getName();
 				PropertyAttribute pa = this.propertyAttributesRepository
 						.findOneByProperty_idAndName(id, name);
+				// TODO: Gestire il required se manca un attributo required 400
 				if (pa == null) {
 					return false;
 				} else {
@@ -221,6 +224,17 @@ public class TemplateService {
 				BigDecimal d = l.get(0).getVersion();
 				d = d.add(new BigDecimal(0.1));
 				template.setVersion(d);
+			} else {
+				Template existVersionT = this.templateRepository
+						.findByXmlidAndVersion(template.getXmlId(),
+								template.getVersion());
+				if (existVersionT != null) {
+					return ResponseEntity
+							.badRequest()
+							.header("Failure",
+									"Version " + template.getVersion()
+											+ " already exist").build();
+				}
 			}
 			if (user == null) {
 				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
