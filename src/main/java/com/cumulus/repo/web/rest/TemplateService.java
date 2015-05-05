@@ -92,11 +92,11 @@ public class TemplateService {
 			}
 			template.setToc(toc);
 			Property property = this.propertyRepository.findOneByRules(t
-					.getSecurityProperty().getSecurityPropertyDefinition());
+					.getSecurityProperty().getSProperty().getClazz());
 			if (property == null) {
 				throw new PropertyNotFoundExcpetion("Property "
-						+ t.getSecurityProperty()
-								.getSecurityPropertyDefinition() + " Not found");
+						+ t.getSecurityProperty().getSProperty().getClazz()
+						+ " Not found");
 			}
 			template.setProperty(property);
 			PropertyPerformance prop = t.getSecurityProperty().getSProperty()
@@ -105,7 +105,11 @@ public class TemplateService {
 				throw new PropertyAttributeException(
 						"Proprety Attribute not found " + prop);
 
-				// TODO: Inserire nome attributo;
+			}
+
+			if (!this.existAllRequired(prop, property.getId())) {
+				throw new PropertyAttributeException(
+						"Proprety Attribute required not found ");
 			}
 			return template;
 
@@ -135,6 +139,38 @@ public class TemplateService {
 					}
 				}
 			}
+		}
+		return true;
+
+	}
+
+	private boolean existAllRequired(PropertyPerformance pp, long id) {
+		List<PropertyAttribute> l = this.propertyAttributesRepository
+				.findByProperty_id(id);
+		for (int c = 0; c < l.size(); c++) {
+			boolean find = false;
+			for (int i = 0; i < pp.getPropertyPerformanceRow().size(); i++) {
+				PropertyPerformanceRow ppr = pp.getPropertyPerformanceRow()
+						.get(i);
+				for (int j = 0; j < ppr.getPropertyPerformanceCell().size(); j++) {
+					PropertyPerformanceCell ppc = ppr
+							.getPropertyPerformanceCell().get(j);
+					String name = ppc.getName();
+					if (l.get(c).getRequired()) {
+						if (l.get(c).getName().equals(name)) {
+							find = true;
+						}
+					} else {
+						find = true;
+					}
+				}
+			}
+			if (!find) {
+				log.debug("Proprety Attribute required not found {}", l.get(c)
+						.getName());
+				return false;
+			}
+
 		}
 		return true;
 
@@ -178,11 +214,8 @@ public class TemplateService {
 					.header("Failure",
 							"Property Not Found Insert Property First").build();
 		} catch (PropertyAttributeException e) {
-			return ResponseEntity
-					.badRequest()
-					.header("Failure",
-							"Property Attribute Not Found Insert Property Attribute First")
-					.build();
+			return ResponseEntity.badRequest()
+					.header("Failure", e.getMessage()).build();
 		}
 		if (template.getId() != null) {
 			return ResponseEntity
@@ -244,16 +277,11 @@ public class TemplateService {
 		} catch (JAXBException e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (PropertyNotFoundExcpetion e) {
-			return ResponseEntity
-					.badRequest()
-					.header("Failure",
-							"Property Not Found Insert Property First").build();
+			return ResponseEntity.badRequest()
+					.header("Failure", e.getMessage()).build();
 		} catch (PropertyAttributeException e) {
-			return ResponseEntity
-					.badRequest()
-					.header("Failure",
-							"Property Attribute Not Found Insert Property Attribute First")
-					.build();
+			return ResponseEntity.badRequest()
+					.header("Failure", e.getMessage()).build();
 		}
 		if (template.getId() == null) {
 			// return create(template);
