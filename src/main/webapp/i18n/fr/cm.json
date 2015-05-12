@@ -1,0 +1,24 @@
+{
+    "cumulusApp": {
+        "cm" : {
+            "home": {
+                "title": "Cms",
+                "createLabel": "Créer un nouveau Cm",
+                "createOrEditLabel": "Créer ou éditer un Cm"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cm {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cm"
+            },
+            "Xml": "Xml",
+            "Cmid": "Cmid",
+            "Xmlid": "Xmlid",
+            "Version": "Version",
+            "Accreditlab": "Accreditlab",
+            "Template": "Template"
+        }
+    }
+}
+

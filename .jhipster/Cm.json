@@ -1,0 +1,63 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Accreditlab",
+            "relationshipNameCapitalized": "Accreditlab",
+            "relationshipFieldName": "accreditlab",
+            "otherEntityName": "accreditlab",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Accreditlab",
+            "otherEntityField": "Name"
+        },
+            {
+            "relationshipId": 2,
+            "relationshipName": "Template",
+            "relationshipNameCapitalized": "Template",
+            "relationshipFieldName": "Template",
+            "otherEntityName": "Template",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Template",
+            "otherEntityField": "XmlId"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "Xml",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Xml",
+            "fieldNameUnderscored": "xml"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "Cmid",
+            "fieldType": "Long",
+            "fieldNameCapitalized": "Cmid",
+            "fieldNameUnderscored": "cmid"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "Xmlid",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Xmlid",
+            "fieldNameUnderscored": "xmlid"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "Version",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Version",
+            "fieldNameUnderscored": "version"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150512142840",
+    "pagination": "infinite-scroll"
+}

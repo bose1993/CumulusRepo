@@ -1,0 +1,21 @@
+{
+    "cumulusApp": {
+        "accreditlab" : {
+            "home": {
+                "title": "Accreditlabs",
+                "createLabel": "Create a new Accreditlab",
+                "createOrEditLabel": "Create or edit a Accreditlab"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Accreditlab {{ id }}?"
+            },
+            "detail": {
+                "title": "Accreditlab"
+            },
+            "Name": "Name",
+            "Url": "Url",
+            "Cm": "Cm",
+            "user": "user"
+        }
+    }
+}

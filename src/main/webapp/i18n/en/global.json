@@ -10,6 +10,8 @@
                 "template": "Template",
                 "property": "Property",
                 "propertyAttribute": "PropertyAttribute",
+                "accreditlab": "Accreditlab",
+                "cm": "Cm",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

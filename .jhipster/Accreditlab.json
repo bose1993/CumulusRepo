@@ -1,0 +1,47 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Cm",
+            "relationshipNameCapitalized": "Cm",
+            "relationshipFieldName": "cm",
+            "otherEntityName": "cm",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Cm"
+        },{
+            "relationshipId": 2,
+            "relationshipName": "user",
+            "relationshipNameCapitalized": "user",
+            "relationshipFieldName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "User",
+            "otherEntityField": "username"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "Name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "Url",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Url",
+            "fieldNameUnderscored": "url"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150512142409",
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,123 @@
+<div>
+
+    <h2 translate="cumulusApp.accreditlab.home.title">Accreditlab</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveAccreditlabModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="cumulusApp.accreditlab.home.createLabel">Create a new Accreditlab</span>
+    </button>
+    <div class="modal fade" id="saveAccreditlabModal" tabindex="-1" role="dialog" aria-labelledby="myAccreditlabLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myAccreditlabLabel" translate="cumulusApp.accreditlab.home.createOrEditLabel">Create or edit a Accreditlab</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="accreditlab.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cumulusApp.accreditlab.Name">Name</label>
+                            <input type="text" class="form-control" name="Name"
+                                   ng-model="accreditlab.name">
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.accreditlab.Url">Url</label>
+                            <input type="text" class="form-control" name="Url"
+                                   ng-model="accreditlab.url">
+                        </div>
+						<!--  
+                        <div class="form-group">
+                            <label translate="cumulusApp.accreditlab.user">user</label>
+                            <select class="form-control" name="user" ng-model="accreditlab.user.id" ng-options="user.id as user.login for user in users">
+                            </select>
+                        </div>
+                        -->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteAccreditlabConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(accreditlab.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="cumulusApp.accreditlab.delete.question" translate-values="{id: '{{accreditlab.id}}'}">Are you sure you want to delete this Accreditlab?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="cumulusApp.accreditlab.Name">Name</th>
+                    <th translate="cumulusApp.accreditlab.Url">Url</th>
+                    <th translate="cumulusApp.accreditlab.user">user</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="accreditlab in accreditlabs">
+                    <td><a ui-sref="accreditlabDetail({id:accreditlab.id})">{{accreditlab.id}}</a></td>
+                    <td>{{accreditlab.name}}</td>
+                    <td>{{accreditlab.url}}</td>
+                    <td>{{accreditlab.user.login}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="accreditlabDetail({id:accreditlab.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(accreditlab.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(accreditlab.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

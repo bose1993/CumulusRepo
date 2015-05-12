@@ -50,6 +50,8 @@ com/cumulus/repo/config/locale/AngularCookieLocaleResolver$1.class
 com/cumulus/repo/xml/template/CapabilityType.class
 com/cumulus/repo/config/LocaleConfiguration.class
 com/cumulus/repo/xml/template/SecurityPropertyType.class
+com/cumulus/repo/web/rest/AccreditlabResource.class
+com/cumulus/repo/domain/Accreditlab.class
 com/cumulus/repo/config/MetricsConfiguration$SparkRegistry.class
 com/cumulus/repo/config/DatabaseConfiguration.class
 com/cumulus/repo/xml/template/TestInstanceType.class
@@ -67,6 +69,7 @@ com/cumulus/repo/config/metrics/DatabaseHealthIndicator.class
 com/cumulus/repo/config/MetricsConfiguration.class
 com/cumulus/repo/xml/template/TestCertificationModel.class
 com/cumulus/repo/repository/CustomAuditEventRepository$1.class
+com/cumulus/repo/web/rest/CmResource.class
 com/cumulus/repo/repository/CustomAuditEventRepository.class
 com/cumulus/repo/domain/Toc.class
 com/cumulus/repo/xml/template/ObjectFactory.class
@@ -82,6 +85,7 @@ com/cumulus/repo/web/propertyeditors/LocaleDateTimeEditor.class
 com/cumulus/repo/web/rest/UserResource.class
 com/cumulus/repo/config/WebConfigurer$1.class
 com/cumulus/repo/repository/AuthorityRepository.class
+com/cumulus/repo/repository/CmRepository.class
 com/cumulus/repo/config/MetricsConfiguration$GraphiteRegistry.class
 com/cumulus/repo/domain/User.class
 com/cumulus/repo/xml/template/AbstracCollectorType$TestAttributes.class
@@ -109,10 +113,12 @@ com/cumulus/repo/config/SecurityConfiguration$1$1.class
 com/cumulus/repo/web/rest/TemplateResource.class
 com/cumulus/repo/xml/template/TocType.class
 com/cumulus/repo/xml/template/PropertyType$PropertyPerformance$PropertyPerformanceRow$PropertyPerformanceCell.class
+com/cumulus/repo/domain/Cm.class
 com/cumulus/repo/config/OAuth2ServerConfiguration.class
 com/cumulus/repo/xml/template/CapabilityType$AttackerCapabilities.class
 com/cumulus/repo/domain/util/ISO8601LocalDateDeserializer.class
 com/cumulus/repo/Application.class
+com/cumulus/repo/repository/AccreditlabRepository.class
 com/cumulus/repo/web/rest/TemplateService.class
 com/cumulus/repo/repository/PersistenceAuditEventRepository.class
 com/cumulus/repo/domain/PersistentAuditEvent.class

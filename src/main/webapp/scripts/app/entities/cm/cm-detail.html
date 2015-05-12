@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span translate="cumulusApp.cm.detail.title">Cm</span> {{cm.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.cm.Xml">Xml</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{cm.xml}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.cm.Cmid">Cmid</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{cm.cmid}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.cm.Xmlid">Xmlid</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{cm.xmlid}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.cm.Version">Version</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{cm.version}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.cm.Accreditlab">Accreditlab</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{cm.accreditlab.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cumulusApp.cm.Template">Template</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{cm.template.xmlId}} | {{cm.template.version}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="cm"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

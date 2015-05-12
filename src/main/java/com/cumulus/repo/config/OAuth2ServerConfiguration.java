@@ -298,7 +298,7 @@ public class OAuth2ServerConfiguration {
 					.withClient(propertyResolver.getProperty(PROP_CLIENTID))
 					.scopes("read", "write")
 					.authorities(AuthoritiesConstants.ADMIN,
-							AuthoritiesConstants.USER)
+							AuthoritiesConstants.USER, AuthoritiesConstants.CA)
 					.authorizedGrantTypes("password", "refresh_token")
 					.secret(propertyResolver.getProperty(PROP_SECRET))
 					.accessTokenValiditySeconds(

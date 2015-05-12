@@ -1,0 +1,154 @@
+<div>
+
+    <h2 translate="cumulusApp.cm.home.title">Cm</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveCmModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="cumulusApp.cm.home.createLabel">Create a new Cm</span>
+    </button>
+    <div class="modal fade" id="saveCmModal" tabindex="-1" role="dialog" aria-labelledby="myCmLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myCmLabel" translate="cumulusApp.cm.home.createOrEditLabel">Create or edit a Cm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="cm.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cumulusApp.cm.Xml">Xml</label>
+                            <input type="text" class="form-control" name="Xml"
+                                   ng-model="cm.xml">
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.cm.Cmid">Cmid</label>
+                            <input type="number" class="form-control" name="Cmid"
+                                   ng-model="cm.cmid">
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.cm.Xmlid">Xmlid</label>
+                            <input type="text" class="form-control" name="Xmlid"
+                                   ng-model="cm.xmlid">
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.cm.Version">Version</label>
+                            <input type="text" class="form-control" name="Version"
+                                   ng-model="cm.version">
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cumulusApp.cm.Accreditlab">Accreditlab</label>
+                            <select class="form-control" name="Accreditlab" ng-model="cm.accreditlab.id" ng-options="accreditlab.id as accreditlab.name for accreditlab in accreditlabs">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="cumulusApp.cm.Template">Template</label>
+                            <select class="form-control" name="Template" ng-model="cm.template.id" ng-options='template.id as (template.xmlId +" | "+ template.version)  for template in templates'>
+                            </select>
+                        </div>
+                         <div class="form-group">
+                            <label translate="cumulusApp.cm.status">Status</label>
+                            <select  class="form-control" ng-model=cm.status>
+                            	<option value="pending">Pending </option>
+                            	<option value="approved">Approved </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteCmConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(cm.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="cumulusApp.cm.delete.question" translate-values="{id: '{{cm.id}}'}">Are you sure you want to delete this Cm?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="cumulusApp.cm.Xml">Xml</th>
+                    <th translate="cumulusApp.cm.Cmid">Cmid</th>
+                    <th translate="cumulusApp.cm.Xmlid">Xmlid</th>
+                    <th translate="cumulusApp.cm.Version">Version</th>
+                    <th translate="cumulusApp.cm.Accreditlab">Accreditlab</th>
+                    <th translate="cumulusApp.cm.Template">Template</th>
+                    <th translate="cumulusApp.cm.status">Status</th>
+                    
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="cm in cms">
+                    <td><a ui-sref="cmDetail({id:cm.id})">{{cm.id}}</a></td>
+                    <td>{{cm.xml}}</td>
+                    <td>{{cm.cmid}}</td>
+                    <td>{{cm.xmlid}}</td>
+                    <td>{{cm.version}}</td>
+                    <td>{{cm.accreditlab.name}}</td>
+                    <td>{{cm.template.xmlId}} | version:{{cm.template.version}} </td>
+                    <td>{{cm.status}}</td>
+                    
+                    <td>
+                        <button type="submit"
+                                ui-sref="cmDetail({id:cm.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(cm.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(cm.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

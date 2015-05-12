@@ -3,6 +3,8 @@ package com.cumulus.repo.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +12,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * A Template.
@@ -54,6 +59,11 @@ public class Template implements Serializable {
 	public Long getId() {
 		return id;
 	}
+
+	@OneToMany(mappedBy = "template")
+	// @JsonIgnore
+	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+	private Set<Cm> cms = new HashSet<>();
 
 	public void setId(Long id) {
 		this.id = id;
@@ -117,6 +127,11 @@ public class Template implements Serializable {
 
 	public Date getCreationeTimestamp() {
 		return this.creation_timestammp;
+	}
+
+	@JsonIgnore
+	public void setAttributes(Set<Cm> propertyattributes) {
+		this.cms = propertyattributes;
 	}
 
 	@Override
